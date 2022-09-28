@@ -94,6 +94,9 @@ body
 .wrapper
 {
 	flex:1;
+	animation: fadeInAnimation ease 2s;
+	animation-iteration-count: 1;
+	animation-fill-mode: forwards;
 }
 .navbar li 
 {
@@ -198,7 +201,7 @@ input, textarea {
 
 body
 {
-	font-family:'Trebuchet MS', sans-serif;
+	font-family: 'Roboto', sans-serif;
 	display:flex;
 	flex-direction:column;
 	min-height:100vh;
@@ -209,15 +212,17 @@ body
   .hero
   {
 	width: 100vw; 
-	height: 100vh;
-	animation: fadeInAnimation ease 3s;
+	height: 50vh;
+	display:flex;
+	flex-direction: row;
+	align-items:center;
+	margin-top:5.25rem;
+	animation: fadeInAnimation ease 2s;
 	animation-iteration-count: 1;
 	animation-fill-mode: forwards;
   }
   .heroSub
   {
-    width: 100vw;
-	height:50vh;
   }
   
 
@@ -329,15 +334,15 @@ body
 
   .heroSub
   {
+	display:flex;
+	justify-content:center;
 	width:50vw;
-	float:left;
 	padding-top: 25vh;  
 	padding-bottom: 25vh;  
   }
   .heroText
   {
 	height: 100%;
-	display: grid;
 	align-content: center;
   }
   

@@ -1,30 +1,24 @@
  <!DOCTYPE html>
 <html>
+<!--TODO: Fix the projects to look nice and perform better; Make website look nicer; About me section; Contact me section-->
     <head> 
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="stylesheet.css">
-		<script src="gsap-public/gsap-public/minified/gsap.min.js">
-			gsap.registerPlugin(ScrollTrigger);
-			gsap.utils.toArray(".hero").forEach(function (e) {
-			  gsap.from(e, {
-				duration: 0.8,
-				ease: "power1.out",
-				opacity: 0,
-				y: 100,
-				scrollTrigger: e,
-				onComplete: () => console.log(e)
-			  });
-			});
-		</script>
+		
+		<script src="./js/gsap.min.js"></script>
+		<script src="./js/ScrollTrigger.min.js"></script>
+		<script src="myScript.js"></script>
+		
         <title>Watchamacall Portfolio</title>
-		<link rel="icon" type="image/x-icon" href="/images/Watchamacall.png">
+		
+		<link rel="icon" type="image/x-icon" href="./images/Watchamacall.png">
     </head>
 
 	<!--Header-->
     <header>
         <div class="navbar col-12 raisinBlack">
             <div class="logoImage">
-                <img src="/images/Watchamacall_Ioanna.png" alt="Watchamacall Avatar">
+                <img src="./images/Watchamacall_Ioanna.png" alt="Watchamacall Avatar">
             </div>
                 <ul class="col-12">
                     <li class="col-4"><a href="index.html">Home</a></li>
@@ -34,56 +28,49 @@
         </div>
     </header>
 	
-    <body class="lightGrey">
+    <body class="lightGreyToCoffee">
 		<!--Intro Text-->
 		<div class="hero" style="text-align: center;">
-			<div class="lightGreyToCoffee heroSub">
+			<div class="heroSub">
 				<div class="heroText">
-				<h2 class="center">Welcome to my portfolio!</h2>
-				<p style="margin:auto; padding: 10px;"> Throughout the <b>x</b> years programming, I have primarily focused on programming in C# and Unity. However I have a bit of experience in C++, HTML and Python.<br>Below are projects which I collaborated and worked on, have a look.</p>
+				<h2 class="center"><b>Welcome to my portfolio!</b></h2>
+				<p style="margin:auto; padding: 10px;"> I am a programmer who has work in Unreal 4/5, Unity.<br>I have experience working in C++, C#, HTML.</p>
 				</div>
 			</div>
-			<div class="lightGreyToCoffee heroSub">
+			<div class="heroSub">
 			<div class="center heroCenter">
 				<img src="images/img_avatar.png"></img>
+			</div>
 			</div>
 		</div>
 		
 		<!--Projects Card Holder-->
-		<div class="coffeeToLightGrey wrapper">
-			<div class="center cardHolder">
-
-				<div class="col-12 coffee" style="text-align: center;">
-					<h1>--<b>PROJECTS</b>--</h1>
-				</div>
-				
+		<div class="wrapper">
+			<div class="center cardHolder" style="margin-top:4rem">
 				
 				<div class="card col-20Percent">
-					<a href="project_example.html">
-						<img src="/images/Watchamacall.png" alt="Avatar" style="width:100%">
+						<img src="./images/Watchamacall.png" alt="Avatar" style="width:100%">
 						<div class="container">
-							<h4><b>Watchamacall.co.uk</b></h4> 
-							<p>This project was made in HTML and CSS<br>This is the website you're currently on, made by me entirely</p> 
+							<h4><b>Unreal Experience</b></h4> 
+							<p>I have experience within the Unreal 4/5 Engine with knowledge of using C++ and Blueprints together</p> 
 						</div>
 					</a> 
 				</div>
 
 				<div class="card col-20Percent">
-					<a href="/">
-						<img src="/images/img_avatar.png" alt="Avatar" style="width:100%">
+						<img src="./images/img_avatar.png" alt="Avatar" style="width:100%">
 						<div class="container">
-							<h4><b>Daedalus</b></h4> 
-							<p>Made using C# and Unity, this was my first year game from University</p> 
+							<h4><b>Unity Experience</b></h4> 
+							<p>Experience using Unity and great knowledge of C# is something I have.</p> 
 						</div>
 					</a> 
 				</div>			
 				
 				<div class="card col-20Percent">
-					<a href="/">
-						<img src="/images/img_avatar.png" alt="Avatar" style="width:100%">
+						<img src="./images/img_avatar.png" alt="Avatar" style="width:100%">
 						<div class="container">
-							<h4><b>Mycelia</b></h4> 
-							<p>Made in C# and Unity, this was my second year game from University</p> 
+							<h4><b>*Something*</b></h4> 
+							<p>*Insert experience in thrid field here</p> 
 						</div>
 					</a> 
 				</div>			
@@ -103,13 +90,44 @@
 			</div>
 		</div>
 		
+		<div class="wrapper">
+			<div class="center cardHolder" style="margin-top:4rem">
+				<div class="center">
+					<h2> Projects </h2>
+				</div>
+				
+				<!--Third Year Title-->
+				<div class="card col-6">
+					<a href="/">
+						<img src="./images/img_avatar.png" alt="Avatar" style="width:100%">
+						<div class="container">
+							<h4><b>Third Year Title</b></h4> 
+							<p>Survival Horror game made in Unreal and created with a mix of C++ and Blueprints</p> 
+						</div>
+					</a> 
+				</div>
+				
+				<!--Self Learning AI-->
+				<div class="card col-6">
+					<a href="/">
+						<img src="./images/img_avatar.png" alt="Avatar" style="width:100%">
+						<div class="container">
+							<h4><b>Deep Q Self Learning AI</b></h4> 
+							<p>I taught an AI to drive around a track using Unity and C#</p> 
+						</div>
+					</a> 
+				</div>
+				
+			</div>
+		</div>	
+		
 		<!--Footer-->
 		<footer class="footer raisinBlack">
 			<div class="navbar socialMediaLinks">
 				<ul>
-					<li><a href="https://www.linkedin.com/in/ryan-cole-0506921ba/"><img src="/images/linkedin.png" style="width:32px;"></a></li>
-					<li><a href="https://twitter.com/Watchamacall_"><img src="/images/twitter.png" style="width:32px;"></a></li>
-					<li><a href="https://github.com/Watchamacall"><img src="/images/github.png" style="width:32px;"></a></li>
+					<li><a href="https://www.linkedin.com/in/ryan-cole-0506921ba/"><img src="./images/linkedin.png" style="width:32px;"></a></li>
+					<li><a href="https://twitter.com/Watchamacall_"><img src="./images/twitter.png" style="width:32px;"></a></li>
+					<li><a href="https://github.com/Watchamacall"><img src="./images/github.png" style="width:32px;"></a></li>
 				</ul>
 			</div>
 		</footer>
