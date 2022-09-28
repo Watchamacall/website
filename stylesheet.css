@@ -19,24 +19,19 @@ body
 .navbar
 {
     display: block;
+	padding: 0.5rem;
 }
 
-.logoImageIMG
-{
-  height: auto;
-  width: auto;
-  padding: 0;
-  display: block;
-  justify-content: center;
-}
 
 .logoImage 
 {
   margin:auto;
-  height: auto;
-  display:table;
+  height: 64px;
+  width: 64px;
 }
 
+.each
+{}
 .cardHolder
 {
   display: flex; 
@@ -138,7 +133,6 @@ a
 {
   text-decoration: none;
   color: black;
-  font-size: 1rem;
   font-weight: 300;
   cursor: pointer;
 }
@@ -216,13 +210,33 @@ body
   {
 	width: 100vw; 
 	height: 100vh;
+	animation: fadeInAnimation ease 3s;
+	animation-iteration-count: 1;
+	animation-fill-mode: forwards;
   }
   .heroSub
   {
     width: 100vw;
 	height:50vh;
   }
+  
+
+
+@keyframes fadeInAnimation
+{
+	0% 
+	{
+		opacity : 0;
+	}
 	
+	100%
+	{
+		opacity: 1;
+	}
+}
+
+
+
 @media (min-width: 768px)
 {
   /* For desktop: */
@@ -267,7 +281,7 @@ body
   .navbar
   {
     display: flex;
-    padding: 1rem;
+    
   }
   
   .navbar ul 
@@ -302,13 +316,31 @@ body
 	background: linear-gradient(0deg, rgba(218,210,216,1) 0%, rgba(165,117,72,1) 0%, rgba(168,123,81,1) 10%, rgba(218,210,216,1) 100%);  
   }
   
+  .coffee
+  {
+	  background: rgba(165,117,72,1);
+  }
+  
+  .lightGrey
+  {
+	  background: rgb(218,210,216);
+  }
+  
 
   .heroSub
   {
 	width:50vw;
 	float:left;
-	padding-top: 50vh;  
+	padding-top: 25vh;  
+	padding-bottom: 25vh;  
   }
+  .heroText
+  {
+	height: 100%;
+	display: grid;
+	align-content: center;
+  }
+  
 }
 	
 

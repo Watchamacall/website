@@ -3,37 +3,49 @@
     <head> 
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="stylesheet.css">
-        <title>Watchamacall</title>
+		<script src="gsap-public/gsap-public/minified/gsap.min.js">
+			gsap.registerPlugin(ScrollTrigger);
+			gsap.utils.toArray(".hero").forEach(function (e) {
+			  gsap.from(e, {
+				duration: 0.8,
+				ease: "power1.out",
+				opacity: 0,
+				y: 100,
+				scrollTrigger: e,
+				onComplete: () => console.log(e)
+			  });
+			});
+		</script>
+        <title>Watchamacall Portfolio</title>
 		<link rel="icon" type="image/x-icon" href="/images/Watchamacall.png">
-
     </head>
 
 	<!--Header-->
     <header>
         <div class="navbar col-12 raisinBlack">
             <div class="logoImage">
-                <img class="logoImageIMG" src="/images/Watchamacall.png" alt="Watchamacall Avatar">
+                <img src="/images/Watchamacall_Ioanna.png" alt="Watchamacall Avatar">
             </div>
                 <ul class="col-12">
                     <li class="col-4"><a href="index.html">Home</a></li>
                     <li class="col-4"><a href="about.html">About</a></li>
                     <li class="col-4"><a href="contact.html">Contact</a></li>
-                </ul> 
-
-			
+                </ul>
         </div>
     </header>
 	
     <body class="lightGrey">
 		<!--Intro Text-->
-		<div class="coffeeToLightGrey hero" style="text-align: center;">
+		<div class="hero" style="text-align: center;">
 			<div class="lightGreyToCoffee heroSub">
+				<div class="heroText">
 				<h2 class="center">Welcome to my portfolio!</h2>
 				<p style="margin:auto; padding: 10px;"> Throughout the <b>x</b> years programming, I have primarily focused on programming in C# and Unity. However I have a bit of experience in C++, HTML and Python.<br>Below are projects which I collaborated and worked on, have a look.</p>
+				</div>
 			</div>
 			<div class="lightGreyToCoffee heroSub">
 			<div class="center heroCenter">
-				<img src="images/Watchamacall.png"></img>
+				<img src="images/img_avatar.png"></img>
 			</div>
 		</div>
 		
@@ -41,13 +53,13 @@
 		<div class="coffeeToLightGrey wrapper">
 			<div class="center cardHolder">
 
-				<div class="col-12" style="text-align: center;">
+				<div class="col-12 coffee" style="text-align: center;">
 					<h1>--<b>PROJECTS</b>--</h1>
 				</div>
 				
 				
 				<div class="card col-20Percent">
-					<a href="project_website.html">
+					<a href="project_example.html">
 						<img src="/images/Watchamacall.png" alt="Avatar" style="width:100%">
 						<div class="container">
 							<h4><b>Watchamacall.co.uk</b></h4> 
@@ -76,6 +88,7 @@
 					</a> 
 				</div>			
 				
+				<!-- COPY THIS FOR EACH NEW VARIABLE
 				<div class="card col-20Percent">
 					<a href="/">
 						<img src="/images/img_avatar.png" alt="Avatar" style="width:100%">
@@ -85,46 +98,8 @@
 						</div>
 					</a> 
 				</div>			
-				
-				<div class="card col-20Percent">
-					<a href="/">
-						<img src="/images/img_avatar.png" alt="Avatar" style="width:100%">
-						<div class="container">
-							<h4><b>Project Name</b></h4> 
-							<p>Brief Desc Of Project</p> 
-						</div>
-					</a> 
-				</div>			
-				
-				<div class="card col-20Percent">
-					<a href="/">
-						<img src="/images/img_avatar.png" alt="Avatar" style="width:100%">
-						<div class="container">
-							<h4><b>Project Name</b></h4> 
-							<p>Brief Desc Of Project</p> 
-						</div>
-					</a> 
-				</div>			
-				
-				<div class="card col-20Percent">
-					<a href="/">
-						<img src="/images/img_avatar.png" alt="Avatar" style="width:100%">
-						<div class="container">
-							<h4><b>Project Name</b></h4> 
-							<p>Brief Desc Of Project</p> 
-						</div>
-					</a> 
-				</div>			
-				
-				<div class="card col-20Percent">
-					<a href="/">
-						<img src="/images/img_avatar.png" alt="Avatar" style="width:100%">
-						<div class="container">
-							<h4><b>Project Name</b></h4> 
-							<p>Brief Desc Of Project</p> 
-						</div>
-					</a> 
-				</div>
+				-->
+
 			</div>
 		</div>
 		
@@ -132,9 +107,9 @@
 		<footer class="footer raisinBlack">
 			<div class="navbar socialMediaLinks">
 				<ul>
-					<li><a href="https://www.linkedin.com/in/ryan-cole-0506921ba/"><img src="/images/linkedin.png"></a></li>
-					<li><a href="https://twitter.com/Watchamacall_"><img src="/images/twitter.png"></a></li>
-					<li><a href="https://github.com/Watchamacall"><img src="/images/github.png"></a></li>
+					<li><a href="https://www.linkedin.com/in/ryan-cole-0506921ba/"><img src="/images/linkedin.png" style="width:32px;"></a></li>
+					<li><a href="https://twitter.com/Watchamacall_"><img src="/images/twitter.png" style="width:32px;"></a></li>
+					<li><a href="https://github.com/Watchamacall"><img src="/images/github.png" style="width:32px;"></a></li>
 				</ul>
 			</div>
 		</footer>

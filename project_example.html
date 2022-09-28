@@ -3,6 +3,10 @@
     <head> 
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="stylesheet.css">
+		<script src="js/gsap.min.js"></script>
+		<script src="js/Draggable.min.js"></script>
+		<script type="text/javascript" src="js/Carousel.js"></script>
+		
         <title>Project_Example</title>
 		<link rel="icon" type="image/x-icon" href="/images/Watchamacall.png">
     </head>
@@ -11,7 +15,7 @@
     <header>
         <div class="navbar col-12 raisinBlack">
             <div class="logoImage">
-                <img class="logoImageIMG" src="/images/Watchamacall.png" alt="Watchamacall Avatar">
+                <img src="/images/Watchamacall_Ioanna.png" alt="Watchamacall Avatar">
             </div>
                 <ul class="col-12">
                     <li class="col-4"><a href="index.html">Home</a></li>
@@ -30,12 +34,14 @@
 				<h2 style="text-align:center;">Project Name</h2>
 				<p>Project Description</p>
 				<div class="center cardHolder navbar">
-					<ul class="col-12">
-					<!--Use the <li> for as many images as are required within the project-->
-						<li class="col-4"><img src="/images/twitter.png"></li>
-						<li class="col-4"><img src="/images/twitter.png"></li>
-						<li class="col-4"><img src="/images/twitter.png"></li>					
-					</ul>
+					<div class="slides-container">
+						<div class="slides-inner">
+							<div class="slide"></div> <!--As many of these are necessary-->
+							<div class="slide"></div> <!--As many of these are necessary-->
+							<div class="slide"></div> <!--As many of these are necessary-->
+						</div>
+					</div>
+					
 				</div>
 				<div class="center">
 				<h2 style="text-align:center">Links</h2>
