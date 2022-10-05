@@ -16,7 +16,7 @@
 
 	<!--Header-->
     <header>
-        <div class="navbar col-12 raisinBlack">
+        <div class="navbar col-12 charlestonGreen">
             <div class="logoImage">
                 <img src="./images/Watchamacall_Ioanna.png" alt="Watchamacall Avatar">
             </div>
@@ -28,7 +28,7 @@
         </div>
     </header>
 	
-    <body class="lightGreyToCoffee">
+    <body class="indigoDyeToSteelBlue">
 		<!--Intro Text-->
 		<div class="hero" style="text-align: center;">
 			<div class="heroSub">
@@ -40,7 +40,7 @@
 		<div class="wrapper">
 			<div class="center cardHolder" style="margin-top:4rem">
 				
-				<div class="card col-20Percent">
+				<div class="cardMain indigoDyeToSteelBlueRadial col-20Percent">
 						<img src="./images/Watchamacall.png" alt="Avatar" style="width:100%">
 						<div class="container">
 							<h4><b>Unreal Experience</b></h4> 
@@ -49,7 +49,7 @@
 					</a> 
 				</div>
 
-				<div class="card col-20Percent">
+				<div class="cardMain indigoDyeToSteelBlueRadial col-20Percent">
 						<img src="./images/img_avatar.png" alt="Avatar" style="width:100%">
 						<div class="container">
 							<h4><b>Unity Experience</b></h4> 
@@ -58,7 +58,7 @@
 					</a> 
 				</div>			
 				
-				<div class="card col-20Percent">
+				<div class="cardMain indigoDyeToSteelBlueRadial col-20Percent">
 						<img src="./images/img_avatar.png" alt="Avatar" style="width:100%">
 						<div class="container">
 							<h4><b>*Something*</b></h4> 
@@ -81,7 +81,8 @@
 
 			</div>
 		</div>
-		
+
+		<!--Projects-->
 		<div class="wrapper">
 			<div class="center cardHolder" style="margin-top:4rem">
 				<div class="center">
@@ -89,10 +90,10 @@
 				</div>
 				
 				<!--Third Year Title-->
-				<div class="col-12">
-					<a href="/">
-						<img src="./images/img_avatar.png" alt="Avatar" style="width:100%">
-						<div class="container">
+				<div class="col-12 card">
+					<img src="./images/img_avatar.png" alt="Avatar" style="max-width: 25vh;">
+					<a href="/" style="display:flex; margin:auto;">
+						<div class="containerLandscape container">
 							<h4><b>Third Year Title</b></h4> 
 							<p>Survival Horror game made in Unreal and created with a mix of C++ and Blueprints</p> 
 						</div>
@@ -100,21 +101,47 @@
 				</div>
 				
 				<!--Self Learning AI-->
-				<div class="card col-6">
-					<a href="/">
-						<img src="./images/img_avatar.png" alt="Avatar" style="width:100%">
-						<div class="container">
+				<div class="col-12 card">
+					
+					<a href="/" style="display:flex; margin:auto;">
+						<div class="containerLandscape container">
 							<h4><b>Deep Q Self Learning AI</b></h4> 
 							<p>I taught an AI to drive around a track using Unity and C#</p> 
 						</div>
 					</a> 
+					<img src="./images/img_avatar.png" alt="Avatar" style="max-width: 25vh;">
 				</div>
 				
 			</div>
 		</div>	
-		
+		<!--Contact Area-->
+		<div class="wrapper" style="padding-bottom: 30px;">
+			<div class="center formBox">
+				<h2>Contact Me!</h2>
+				<form action="https://formsubmit.co/bf3b43088bdb1946e1d454da88fa6037 " method="POST">
+					<div class="userBox">
+						<input type="name" name="name" required>
+						<label>Full Name</label>
+					</div>
+					<div class="userBox">
+						<input type="email" name="email" required>
+						<label>Email</label>
+					</div>
+					<div class="userBox">
+						
+						<textarea type="text" name="text" required rows="1"></textarea>
+						<label>Message</label>
+					</div>
+				<input type="hidden" name="_next" value="sent.html">
+				
+				<div class="buttonForm">
+					<button id="submit" type="submit">Submit</button>
+				</div>
+			</form>
+			</div>
+		</div>
 		<!--Footer-->
-		<footer class="footer raisinBlack">
+		<footer class="footer charlestonGreen">
 			<div class="navbar socialMediaLinks">
 				<ul>
 					<li><a href="https://www.linkedin.com/in/ryan-cole-0506921ba/"><img src="./images/linkedin.png" style="width:32px;"></a></li>

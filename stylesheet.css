@@ -1,4 +1,5 @@
 /* https://coolors.co/a57548-2e282a-dad2d8-647aa3-ccdad1 */
+/*https://coolors.co/1b262c-0f4c75-3282b8-bbe1fa-000000*/
 body
 {
     margin: 0;
@@ -30,23 +31,31 @@ body
   width: 64px;
 }
 
-.each
-{}
 .cardHolder
 {
   display: flex; 
   flex-wrap: wrap;
 }
+
 .card 
 {
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
   max-width: 50%;
   float:left; 
   margin: auto;
   margin-top:10px;
-  border: 1px solid black;
-  background-color: #647AA3;
+  background-color: #3282B8;
+}
+.cardMain 
+{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  max-width: 50%;
+  float:left; 
+  margin: auto;
+  margin-top:10px;
+  background-color: #3282B8;
 }
 
 .link 
@@ -58,33 +67,116 @@ body
   left: 0;
   z-index: 1;
 }
-.ashGrey
+.charlestonGreen
 {
-	background-color:#CCDAD1;
+  background-color:#1b262c;
 }
-.lightGrey
+.indigoDye
 {
-	background-color:#DAD2D8;
+  background-color:#0F4C75;
 }
-.raisinBlack
+.steelBlue
 {
-	background-color:#2E282A;
+  background-color:#3282B8;
 }
-.coffeeToLightGrey
+.UranianBlue
 {
-  background: rgb(165,117,72);
-}
-.lightGreyToCoffee
-{
-	background-color:#DAD2D8;
+  background-color: #BBE1FA;
 }
 
+.indigoDyeToSteelBlue
+{
+  background: hsla(204, 77%, 26%, 1);
+
+  background-image: linear-gradient(to bottom, #0f4c75, #195985, #216696, #2a74a7, #3282b8);
+}
+.indigoDyeToSteelBlueRadial
+{
+  background-image: radial-gradient(circle, #3282b8, #2a74a7, #216696, #195985, #0f4c75);
+}
 
 .projectDiv
 {
 	overflow:hidden;
 }
 
+.formBox
+{
+  width:400px;
+  background: #0F4C75;
+  box-shadow: 0 15px 25px #3282B8;
+  border-radius: 10px;
+}
+.formBox h2
+{
+  margin: 0 0 30px;
+  padding:0;
+  text-align:center;
+}
+.formBox .userBox input
+{ 
+  position: relative;
+  width:100%;
+  padding:10px 0;
+  font-size:16px;
+  margin-bottom: 30px;
+  border:none;
+  border-bottom:1px solid #fff;
+  outline:none;
+  background:transparent;
+}
+.formBox .userBox textarea
+{ 
+  position: relative;
+  width:100%;
+  padding:10px 0;
+  font-size:16px;
+  margin-bottom: 30px;
+  border:none;
+  border-bottom:1px solid #fff;
+  outline:none;
+  background:transparent;
+  font-family:'Roboto', sans-serif;
+}
+.formBox .userBox label
+{
+  position:relative;
+  left:0;
+  top:-60px;
+  padding:10px 0;
+  font-size:16px;
+  pointer-events: none;
+  transition: .5s;
+}
+.formBox .userBox input:focus~label, .formBox .userBox input:valid~label, .formBox .userBox textarea:focus~label, .formBox .userBox textarea:valid~label
+{
+  top:-85px;
+  left:0;
+  color:#BBE1FA;
+  font-size:12px;
+}
+
+#submit
+{
+  padding:10px 20px;
+  color:#BBE1FA;
+  font-size:16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow:hidden;
+  transition: .5s;
+  letter-spacing: 4px;
+  border:1px solid #3282B8;
+  margin:auto;
+  background-color:#111
+}
+#submit:hover
+{
+  background:#0f4c75;
+  border-radius: 5px;
+  box-shadow:0 0 5px #3282b8, 0 0 25px #3282B8, 0 0 50px #3282B8, 0 0 100px #3282B8;
+
+}
 .form
 {
 	display:block;
@@ -220,11 +312,7 @@ body
 	animation-iteration-count: 1;
 	animation-fill-mode: forwards;
   }
-  .heroSub
-  {
-  }
   
-
 
 @keyframes fadeInAnimation
 {
@@ -308,28 +396,7 @@ body
   .projectDiv
   {
 	width:100%;
-  }
-  .coffeeToLightGrey
-  {
-	  background: rgb(218,210,216);
-	  background: linear-gradient(90deg, rgba(218,210,216,1) 0%, rgba(165,117,72,1) 25%, rgba(168,123,81,1) 75%, rgba(218,210,216,1) 100%);
-  }
-  .lightGreyToCoffee
-  {
-	background: rgb(218,210,216);
-	background: linear-gradient(0deg, rgba(218,210,216,1) 0%, rgba(165,117,72,1) 0%, rgba(168,123,81,1) 10%, rgba(218,210,216,1) 100%);  
-  }
-  
-  .coffee
-  {
-	  background: rgba(165,117,72,1);
-  }
-  
-  .lightGrey
-  {
-	  background: rgb(218,210,216);
-  }
-  
+  }  
 
   .heroSub
   {
@@ -343,6 +410,31 @@ body
 	height: 100%;
 	align-content: center;
   }
+
+  .card
+{
+  position:relative;
+  height:25vh;
+  margin: 20px 40px;
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  max-width: 100%;
+  float:none;
+  background-color: #ffffff00;
+}
+.containerDesktop
+{
+  margin:auto;
+  margin-left:5vw;
+  margin-right:5vw;
+  display:flex;
+  flex-direction: column;
+}
+
   
 }
 	
