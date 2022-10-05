@@ -212,11 +212,10 @@ body
   .hero
   {
 	width: 100vw; 
-	height: 50vh;
+	height: 75vh;
 	display:flex;
 	flex-direction: row;
 	align-items:center;
-	margin-top:5.25rem;
 	animation: fadeInAnimation ease 2s;
 	animation-iteration-count: 1;
 	animation-fill-mode: forwards;
@@ -336,9 +335,8 @@ body
   {
 	display:flex;
 	justify-content:center;
-	width:50vw;
-	padding-top: 25vh;  
-	padding-bottom: 25vh;  
+	width:100vw;
+	height: 75vh;	
   }
   .heroText
   {
