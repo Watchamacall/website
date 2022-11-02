@@ -2,10 +2,9 @@
 <html>
     <head> 
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="stylesheet.css">
-		<script src="js/gsap.min.js"></script>
-		<script src="js/Draggable.min.js"></script>
-		<script type="text/javascript" src="js/Carousel.js"></script>
+        <link rel="stylesheet" href="./stylesheet.css">
+		<link rel="stylesheet" href="./flickity.css">
+		<script src="./js/flickity.pkgd.min.js"></script>
 		
         <title>Project_Example</title>
 		<link rel="icon" type="image/x-icon" href="/images/Watchamacall.png">
@@ -13,9 +12,9 @@
 
 	<!--Header-->
     <header>
-        <div class="navbar col-12 raisinBlack">
+        <div class="navbar col-12 charlestonGreen">
             <div class="logoImage">
-                <img src="/images/Watchamacall_Ioanna.png" alt="Watchamacall Avatar">
+                <img src="./images/Watchamacall_Ioanna.png" alt="Watchamacall Avatar">
             </div>
                 <ul class="col-12">
                     <li class="col-4"><a href="index.html">Home</a></li>
@@ -27,22 +26,56 @@
         </div>
     </header>
 	
-	<body class="lightGrey">
+	<body class="indigoDyeToSteelBlue">
 	
-		<div class="coffeeToLightGrey wrapper">
+		<div class="indigoDyeToSteelBlue wrapper">
 			<div class="center projectDiv">
 				<h2 style="text-align:center;">Project Name</h2>
-				<p>Project Description</p>
-				<div class="center cardHolder navbar">
-					<div class="slides-container">
-						<div class="slides-inner">
-							<div class="slide"></div> <!--As many of these are necessary-->
-							<div class="slide"></div> <!--As many of these are necessary-->
-							<div class="slide"></div> <!--As many of these are necessary-->
-						</div>
-					</div>
+
+				<div class="gallery js-flickity center"
+					data-flickity-options='{ "wrapAround": true, "autoPlay": true, "pauseAutoPlayOnHover": false, "prevNextButtons": true, "lazyLoad":true }'>
 					
+					<div class="gallery-cell">
+						<img class="gallery-cell-image"
+						  data-flickity-lazyload="./images/Watchamacall_Ioanna.png" alt="tulip" />
+					</div>
+				    <div class="gallery-cell">
+						<img class="gallery-cell-image"
+						  data-flickity-lazyload="./images/Watchamacall_Ioanna.png" alt="grapes" />
+				    </div>
+				    <div class="gallery-cell">
+						<img class="gallery-cell-image"
+						  data-flickity-lazyload="./images/Watchamacall_Ioanna.png" alt="raspberries" />
+				    </div>
+				    <div class="gallery-cell">
+						<img class="gallery-cell-image"
+						  data-flickity-lazyload="./images/Watchamacall_Ioanna.png" alt="wolf" />					  </div>
+					<div class="gallery-cell">
+						<img class="gallery-cell-image"
+						  data-flickity-lazyload="./images/Watchamacall_Ioanna.png" alt="sea" />
+				    </div>
+			  	    <div class="gallery-cell">
+						<img class="gallery-cell-image"
+						  data-flickity-lazyload="./images/Watchamacall_Ioanna.png" alt="leaf droplets" />
+					</div>
+					<div class="gallery-cell">
+						<img class="gallery-cell-image"
+						  data-flickity-lazyload="./images/Watchamacall_Ioanna.png" alt="gulls" />
+					</div>
+					<div class="gallery-cell">
+						<img class="gallery-cell-image"
+						  data-flickity-lazyload="./images/Watchamacall_Ioanna.png" alt="touch screen" />
+					</div>
+					<div class="gallery-cell">
+						<img class="gallery-cell-image"
+						  data-flickity-lazyload="./images/Watchamacall_Ioanna.png" alt="van" />
+					</div>
 				</div>
+
+				<div class="center">
+					<p>Project Description</p>
+				</div>
+
 				<div class="center">
 				<h2 style="text-align:center">Links</h2>
 					<ul style="text-align:center; list-style-type:none; padding:1rem;">
@@ -56,12 +89,12 @@
 		
 		
 		<!--Footer-->
-		<footer class="footer raisinBlack">
+		<footer class="footer charlestonGreen">
 			<div class="navbar socialMediaLinks">
 				<ul>
-					<li><a href="https://www.linkedin.com/in/ryan-cole-0506921ba/"><img src="/images/linkedin.png"></a></li>
-					<li><a href="https://twitter.com/Watchamacall_"><img src="/images/twitter.png"></a></li>
-					<li><a href="https://github.com/Watchamacall"><img src="/images/github.png"></a></li>
+					<li><a href="https://www.linkedin.com/in/ryan-cole-0506921ba/"><img src="./images/linkedin.png" style="width:32px;"></a></li>
+					<li><a href="https://twitter.com/Watchamacall_"><img src="./images/twitter.png" style="width:32px;"></a></li>
+					<li><a href="https://github.com/Watchamacall"><img src="./images/github.png" style="width:32px;"></a></li>
 				</ul>
 			</div>
 		</footer>

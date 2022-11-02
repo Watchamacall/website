@@ -1,6 +1,5 @@
  <!DOCTYPE html>
 <html>
-<!--TODO: Fix the projects to look nice and perform better; Make website look nicer; About me section; Contact me section-->
     <head> 
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="stylesheet.css">
@@ -21,9 +20,9 @@
                 <img src="./images/Watchamacall_Ioanna.png" alt="Watchamacall Avatar">
             </div>
                 <ul class="col-12">
-                    <li class="col-4"><a href="index.html">Home</a></li>
-                    <li class="col-4"><a href="about.html">About</a></li>
-                    <li class="col-4"><a href="contact.html">Contact</a></li>
+                    <li class="col-4"><a href="./index.html">Home</a></li>
+                    <li class="col-4"><a href="./about.html">Projects</a></li>
+                    <li class="col-4"><a href="/">Resume</a></li>
                 </ul>
         </div>
     </header>
@@ -41,7 +40,7 @@
 			<div class="center cardHolder" style="margin-top:4rem">
 				
 				<div class="cardMain indigoDyeToSteelBlueRadial col-20Percent">
-						<img src="./images/Watchamacall.png" alt="Avatar" style="width:100%">
+						<img src="./images/unreal.png" alt="Avatar" style="width:100%">
 						<div class="container">
 							<h4><b>Unreal Experience</b></h4> 
 							<p>I have experience within the Unreal 4/5 Engine with knowledge of using C++ and Blueprints together</p> 
@@ -50,7 +49,7 @@
 				</div>
 
 				<div class="cardMain indigoDyeToSteelBlueRadial col-20Percent">
-						<img src="./images/img_avatar.png" alt="Avatar" style="width:100%">
+						<img src="./images/unity.png" alt="Avatar" style="width:100%">
 						<div class="container">
 							<h4><b>Unity Experience</b></h4> 
 							<p>Experience using Unity and great knowledge of C# is something I have.</p> 
@@ -66,18 +65,6 @@
 						</div>
 					</a> 
 				</div>			
-				
-				<!-- COPY THIS FOR EACH NEW VARIABLE
-				<div class="card col-20Percent">
-					<a href="/">
-						<img src="/images/img_avatar.png" alt="Avatar" style="width:100%">
-						<div class="container">
-							<h4><b>Project Name</b></h4> 
-							<p>Brief Desc Of Project</p> 
-						</div>
-					</a> 
-				</div>			
-				-->
 
 			</div>
 		</div>
@@ -92,7 +79,7 @@
 				<!--Third Year Title-->
 				<div class="col-12 card">
 					<img src="./images/img_avatar.png" alt="Avatar" style="max-width: 25vh;">
-					<a href="/" style="display:flex; margin:auto;">
+					<a href="project_example.html" style="display:flex; margin:auto;">
 						<div class="containerLandscape container">
 							<h4><b>Third Year Title</b></h4> 
 							<p>Survival Horror game made in Unreal and created with a mix of C++ and Blueprints</p> 
@@ -101,7 +88,7 @@
 				</div>
 				
 				<!--Self Learning AI-->
-				<div class="col-12 card">
+				<div class="col-12 card cardReverse">
 					
 					<a href="/" style="display:flex; margin:auto;">
 						<div class="containerLandscape container">
@@ -119,6 +106,7 @@
 			<div class="center formBox">
 				<h2>Contact Me!</h2>
 				<form action="https://formsubmit.co/bf3b43088bdb1946e1d454da88fa6037 " method="POST">
+					
 					<div class="userBox">
 						<input type="name" name="name" required>
 						<label>Full Name</label>
@@ -132,12 +120,12 @@
 						<textarea type="text" name="text" required rows="1"></textarea>
 						<label>Message</label>
 					</div>
-				<input type="hidden" name="_next" value="sent.html">
+					<input type="hidden" name="_next" value="index.html">
 				
-				<div class="buttonForm">
-					<button id="submit" type="submit">Submit</button>
-				</div>
-			</form>
+					<div class="buttonForm">
+						<button id="submit" type="submit">Submit</button>
+					</div>
+				</form>
 			</div>
 		</div>
 		<!--Footer-->
