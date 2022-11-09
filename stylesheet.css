@@ -10,7 +10,7 @@ body
 /* For mobile phones: */
 [class*="col-"] 
 {
-  width: 100%;
+  /*width: 100%;*/
 }
 .socialMediaImg
 {
@@ -299,7 +299,6 @@ input, textarea {
   font-size: 1rem;
   font-weight: 300;
 }
-
 
 body
 {
