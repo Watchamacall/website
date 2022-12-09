@@ -30,7 +30,7 @@
 	
 		<div class="indigoDyeToSteelBlue wrapper">
 			<div class="center projectDiv">
-				<h2 style="text-align:center;">MindSlayer</h2>
+				<h1>MindSlayer</h1>
 				<p>Created In: Unreal 5</p>
 				<p>Team Project</p>
 
@@ -75,7 +75,21 @@
 				</div>
 
 				<div class="center">
-					<p>Project Description</p>
+					<p>MindSlayer is a parkour, stealth game inspired by Mirror's Edge and Dishonored. You play as a assassin called The MindSlayer as part of an organisation and you are sent out to assassinate a potential threat to the world called The Baron.</p>
+					<p>My job was the lead programmer, and with this role came creating the parkour mechanics and the AI for the game. This entire project utilises a mix of C++ and Blueprints. The C++ is for the complex functions such as the Physics for the player. And the Blueprints is for the ease of adding sounds and allowing for Designers to understand how everything comes together.</p>
+					<h3>Parkour Mechanics</h3>
+					<p>The parkour for the game was created by inheriting the UCharacterComponent for the ACharacter in order to complete the physics, this physics utilises Cross Product and Dot Product to find the forward/up vector based on the Wall Run and the Wall Climb respectively.</p>
+					<h3>Artificial Intellegence</h3>
+					<p>The AI for the game was created in the format of a Finite State Machine(FSM), it has 4 states: 
+						<h4>Patrol</h4>
+						<p>The AI patrols between points within an array of Actors, which are placed around the world.</p>
+						<h4>Investigate</h4>
+						<p>When the AI sees the player, it then starts moving towards the player. If the player is no longer visible, the AI will go to where it last saw the player and check around to see if it can see it again. If it does not then it will go back to patrolling</p>
+						<h4>Chase</h4>
+						<p>If the player remains in the AI's sight for too long then the AI will start to chase after the player. If the AI touches the player then the player will "die" and will have to start from the beginning. Once the player is out of the AI's sight, the AI will switch to Investigate and check the area for the player.</p>
+						<h4>Stun</h4>
+						<p>This state is used for when the player stuns the AI, this holds the AI in place for x amount of time and investigates where it stands once the stun period is over.</p>
+					</p>
 				</div>
 
 			</div>
