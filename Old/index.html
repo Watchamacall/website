@@ -1,0 +1,143 @@
+ <!DOCTYPE html>
+<html>
+    <head> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="stylesheet.css">
+		
+		<script src="./js/gsap.min.js"></script>
+		<script src="./js/ScrollTrigger.min.js"></script>
+		<script src="myScript.js"></script>
+		
+        <title>Watchamacall Portfolio</title>
+		
+		<link rel="icon" type="image/x-icon" href="./images/Watchamacall.png">
+    </head>
+
+	<!--Header-->
+    <header>
+        <div class="navbar col-12 charlestonGreen">
+            <div class="logoImage">
+                <img src="./images/Watchamacall_Ioanna.png" alt="Watchamacall Avatar">
+            </div>
+                <ul class="col-12">
+                    <li class="col-4 navOptions"><a href="/">Home</a></li>
+                    <li class="col-4 navOptions"><a href="./projects.html">Projects</a></li>
+                    <li class="col-4 navOptions"><a href="./resume.html">Resume</a></li>
+                </ul>
+        </div>
+    </header>
+	
+    <body class="indigoDyeToSteelBlue">
+		<!--Intro Text-->
+		<div class="hero" style="text-align: center;">
+			<div class="heroSub">
+				<a href="./MindSlayer.html" class="center"><img src="./images/MindSlayerImage.png"></img></a>
+			</div>
+		</div>
+		
+		<!--Projects Card Holder-->
+		<div class="wrapper">
+			<div class="center cardHolder" style="margin-top:4rem">
+				
+				<div class="cardMain indigoDyeToSteelBlueRadial col-20Percent">
+						<img src="./images/unreal.png" alt="Avatar" style="width:100%">
+						<div class="container">
+							<h4><b>Unreal Experience</b></h4> 
+							<p>Experience within the Unreal 4/5 Engine with knowledge of using C++ and Blueprints together</p> 
+						</div>
+					</a> 
+				</div>
+
+				<div class="cardMain indigoDyeToSteelBlueRadial col-20Percent">
+						<img src="./images/unity.png" alt="Avatar" style="width:100%">
+						<div class="container">
+							<h4><b>Unity Experience</b></h4> 
+							<p>Experience using Unity including knowledge of C#</p> 
+						</div>
+					</a> 
+				</div>			
+				
+				<div class="cardMain indigoDyeToSteelBlueRadial col-20Percent">
+						<img src="./images/NeuralNetwork.png" alt="Avatar" style="width:100%">
+						<div class="container">
+							<h4><b>AI</b></h4> 
+							<p>Experience creating AI in C++, C# and Python</p> 
+						</div>
+					</a> 
+				</div>			
+
+			</div>
+		</div>
+
+		<!--Projects-->
+		<div class="wrapper">
+			<div class="center cardHolder" style="margin-top:4rem">
+				<div class="center">
+					<h2 style="text-align: center; text-shadow: 5px 4px 8px rgba(0,0,0,0.2)"> Projects </h2>
+				</div>
+				
+				<!--Third Year Title-->
+				<div class="col-12 card indigoDyeToSteelBlueRadial">
+					<img src="./images/unreal.png" alt="Avatar" style="max-width: 25vh;">
+					<a href="./MindSlayer.html" style="display:flex; margin:auto;">
+						<div class="containerLandscape container">
+							<h4><b>MindSlayer</b></h4> 
+							<p>Survival Horror game made in Unreal and created with a mix of C++ and Blueprints</p> 
+						</div>
+					</a> 
+				</div>
+				
+				<!--Self Learning AI-->
+				<div class="col-12 card indigoDyeToSteelBlueRadial cardReverse">
+					
+					<a href="./DeepLearningAI.html" style="display:flex; margin:auto;">
+						<div class="containerLandscape container">
+							<h4><b>Deep Q Self Learning AI</b></h4> 
+							<p>I taught an AI to drive around a track using Unity and C#</p> 
+						</div>
+					</a> 
+					<img src="./images/unity.png" alt="Avatar" style="max-width: 25vh;">
+				</div>
+				
+			</div>
+		</div>	
+
+		<!--Contact Area-->
+		<div class="wrapper formWrapper" style="padding: 30px 0px 30px 0px;">
+			<div class="center formBox" style="display: flex; flex-direction: column;">
+				<h2>Contact Me!</h2>
+				<form action="https://formsubmit.co/bf3b43088bdb1946e1d454da88fa6037 " method="POST">
+					
+					<div class="userBox" style="padding: 0px 10px 0px 10px;">
+						<input type="name" name="name" required>
+						<label>Full Name</label>
+					</div>
+					<div class="userBox" style="padding: 0px 10px 0px 10px;">
+						<input type="email" name="email" required>
+						<label>Email</label>
+					</div>
+					<div class="userBox" style="padding: 0px 10px 0px 10px;">
+						
+						<textarea type="text" name="text" required rows="1"></textarea>
+						<label>Message</label>
+					</div>
+					<input type="hidden" name="_next" value="index.html">
+				
+					<div class="buttonForm" style="display:flex">
+						<button id="submit" type="submit">Submit</button>
+					</div>
+				</form>
+			</div>
+		</div>
+		<!--Footer-->
+		<footer class="footer charlestonGreen">
+			<div class="navbar socialMediaLinks">
+				<ul>
+					<li><a href="https://www.linkedin.com/in/ryan-cole-0506921ba/"><img src="./images/linkedin.png"  style="width:32px;"></a></li>
+					<li><a href="https://twitter.com/Watchamacall_"><img src="./images/twitter.png" style="width:32px;"></a></li>
+					<li><a href="https://github.com/Watchamacall"><img src="./images/github.png" style="width:32px;"></a></li>
+				</ul>
+			</div>
+		</footer>
+    </body>
+</html> 
