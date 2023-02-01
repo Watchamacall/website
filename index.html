@@ -2,14 +2,15 @@
 <html>
 
 <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="index_files/font-awesome.min.css">
     <link rel="stylesheet" href="CSS/stylesheet.css">
     <script src="JavaScript/scripts.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Roboto Slab" rel="stylesheet">
+    <link href="index_files/css.css" rel="stylesheet">
 </head>
 
-<body data-new-gr-c-s-check-loaded="8.904.0" data-gr-ext-installed="" style="display: flex;flex-direction: column;">
+<body style="display: flex;flex-direction: column;">
 
     <div class="topnav" id="myTopnav">
         <a href="#home" class="active">Home</a>
@@ -25,7 +26,7 @@
         <div style="display: flex;flex: 20;"></div>
         <div class="headerText">
             <h3 style="font-size: 2rem;">Welcome to,</h3>
-            <h2 style="margin-left: 0;margin: 0;font-size: 5rem;position: inherit;">Ryan Cole's Portfolio</h2>
+            <h2>Ryan Cole's Portfolio</h2>
             <h3 style="padding-left: 20px;font-size: 1.75rem;">Games Programmer</h3>
         </div>
         <div style="display: flex;flex: 33.3333;"></div>
@@ -36,7 +37,7 @@
         <ul>
             <li>
                 <h2>Information</h2>
-                <div onclick="" class="skill informationLink">
+                <div class="skill informationLink" onclick="SendTo('https://twitter.com/Watchamacall_')">
                     <img class="skillImg" style="height: 100px;width: 100px;margin-right: 10px;"
                         src="Images/Twitter.png">
 
@@ -48,20 +49,28 @@
                         <div style="flex: 60;"></div>
                     </div>
                 </div>
-                <div onclick="" class="skill informationLink">
+                <div class="skill informationLink" onclick="SendTo('https://www.linkedin.com/in/ryan-cole-0506921ba/')">
                     <img class="skillImg" style="height: 100px;width: 100px;margin-right: 10px;"
                         src="Images/LinkedIn.png">
-                    <div class="skillText">
-                        <h3>LinkedIn</h3>
 
+                    <div style="display: flex;flex-direction: column;">
+                        <div class="skillText">
+                            <h3>LinkedIn</h3>
+
+                        </div>
+                        <div style="flex: 60;"></div>
                     </div>
                 </div>
-                <div onclick="" class="skill informationLink">
+                <div class="skill informationLink" onclick="SendTo('https://github.com/watchamacall')">
                     <img class="skillImg" style="height: 100px;width: 100px;margin-right: 10px;"
                         src="Images/Github.png">
-                    <div class="skillText">
-                        <h3>GitHub</h3>
 
+                    <div style="display: flex;flex-direction: column;">
+                        <div class="skillText">
+                            <h3>GitHub</h3>
+
+                        </div>
+                        <div style="flex: 60;"></div>
                     </div>
                 </div>
             </li>
@@ -96,28 +105,29 @@
         <div class="projects">
             <ul>
                 <li onclick="document.location.href = projectName">
-                    <h2>Project Title</h2>
-                    <h3>Project Details</h3><img src="https://www.watchamacall.co.uk/images/MindSlayerImage.png">
+                    <h2>MindSlayer</h2>
+                    <h3>Year 3 Team Project. Made in Unreal 5 &amp; Blueprints; C++</h3><img
+                        src="Images/MindslayerImage.png">
                 </li>
                 <li onclick="document.location.href = projectName">
                     <h2>Project Title</h2>
-                    <h3>Project Details</h3><img src="https://www.watchamacall.co.uk/images/MindSlayerImage.png">
+                    <h3>Project Details</h3><img src="index_files/MindSlayerImage.png">
                 </li>
                 <li onclick="document.location.href = projectName">
                     <h2>Project Title</h2>
-                    <h3>Project Details</h3><img src="https://www.watchamacall.co.uk/images/MindSlayerImage.png">
+                    <h3>Project Details</h3><img src="index_files/MindSlayerImage.png">
                 </li>
                 <li onclick="document.location.href = projectName">
                     <h2>Project Title</h2>
-                    <h3>Project Details</h3><img src="https://www.watchamacall.co.uk/images/MindSlayerImage.png">
+                    <h3>Project Details</h3><img src="index_files/MindSlayerImage.png">
                 </li>
                 <li onclick="document.location.href = projectName">
                     <h2>Project Title</h2>
-                    <h3>Project Details</h3><img src="https://www.watchamacall.co.uk/images/MindSlayerImage.png">
+                    <h3>Project Details</h3><img src="index_files/MindSlayerImage.png">
                 </li>
                 <li onclick="document.location.href = projectName">
                     <h2>Project Title</h2>
-                    <h3>Project Details</h3><img src="https://www.watchamacall.co.uk/images/MindSlayerImage.png">
+                    <h3>Project Details</h3><img src="index_files/MindSlayerImage.png">
                 </li>
 
             </ul>
@@ -133,7 +143,7 @@
                     <div><textarea rows="7" required="" style=" "></textarea>
                     </div>
                     <div><button style=" ">
-                            <p>Submit</p>
+                            <p style="color: #fff;">Submit</p>
                         </button>
                     </div>
                 </form>
@@ -146,9 +156,11 @@
     <div class="footer">
 
         <a href="https://www.vecteezy.com/free-vector/facebook"
-            style="text-align: right;margin: auto;margin-right: 0;text-decoration: none;color: black;">Facebook Vectors
+            style="text-align: right;margin: auto;margin-right: 0;text-decoration: none;color: #ccc;">Facebook Vectors
             by Vecteezy</a>
     </div>
+
+
 </body>
 
 </html>

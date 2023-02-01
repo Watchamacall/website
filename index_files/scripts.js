@@ -6,7 +6,3 @@ function NavbarOpen() {
       x.className = "topnav";
     }
   }
-
-function SendTo(website) {
-  window.location.assign(website);
-}
