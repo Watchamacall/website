@@ -1,55 +1,57 @@
 <!DOCTYPE html>
-<html><head>
-        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!--Font-->
-        <link rel="stylesheet" href="MindSlayer_files/font-awesome.min.css">
+<html>
 
-        <!--Bootstrap-->
-        <link rel="stylesheet" href="MindSlayer_files/bootstrap.min.css">
-        <script src="MindSlayer_files/jquery.min.js"></script>
-        <script src="MindSlayer_files/bootstrap.min.js"></script>
-                <!--Custom-->
-                <link rel="stylesheet" href="MindSlayer_files/stylesheet.css">
-                <script src="MindSlayer_files/scripts.js"></script>
-                <link href="MindSlayer_files/css.css" rel="stylesheet">
-                <link href="MindSlayer_files/ProjectStylesheet.css" rel="stylesheet">
-    </head>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--Font-->
+  <link rel="stylesheet" href="MindSlayer_files/font-awesome.min.css">
 
-    <body data-new-gr-c-s-check-loaded="8.904.0" data-gr-ext-installed="">
-        <div class="topnav" id="myTopnav">
-            <a href="file:///C:/Users/ryanc/Documents/Falmouth%20University/General%20Repos/website/index.html">Home</a>
-            <a href="#news">About</a>
-            <a href="#contact" class="active">Projects</a>
-            <a href="#about">Resume</a>
-            <a href="javascript:void(0);" class="icon" onclick="NavbarOpen()">
-                <i class="fa fa-bars"></i>
-            </a>
+  <!--Bootstrap-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <!--Custom-->
+  <link rel="stylesheet" href="CSS/stylesheet.css">
+  <script src="JavaScript/scripts.js"></script>
+  <link href="MindSlayer_files/css.css" rel="stylesheet">
+  <link href="CSS/ProjectStylesheet.css" rel="stylesheet">
+</head>
+
+<body data-new-gr-c-s-check-loaded="8.904.0" data-gr-ext-installed="">
+  <div class="topnav" id="myTopnav">
+    <a href="./index.html">Home</a>
+    <a href="#news">About</a>
+    <a href="#contact" class="active">Projects</a>
+    <a href="#about">Resume</a>
+    <a href="javascript:void(0);" class="icon" onclick="NavbarOpen()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+  <!--Carousel-->
+  <div class="container">
+    <br>
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+        <li data-target="#myCarousel" data-slide-to="3"></li>
+      </ol>
+
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner" role="listbox">
+
+        <div class="item active">
+          <img src="MindSlayer_files/MindSlayerImage.png" alt="Chania" width="460" height="345">
+          <div class="carousel-caption">
+            <h3>MindSlayer Logo</h3>
+            <p>The base concept art which is shows the theme of the game</p>
+          </div>
         </div>
-        <!--Carousel-->
-        <div class="container">
-            <br>
-            <div id="myCarousel" class="carousel slide" data-ride="carousel">
-              <!-- Indicators -->
-              <ol class="carousel-indicators">
-                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                <li data-target="#myCarousel" data-slide-to="1"></li>
-                <li data-target="#myCarousel" data-slide-to="2"></li>
-                <li data-target="#myCarousel" data-slide-to="3"></li>
-              </ol>
-          
-              <!-- Wrapper for slides -->
-              <div class="carousel-inner" role="listbox">
-          
-                <div class="item active">
-                  <img src="MindSlayer_files/MindSlayerImage.png" alt="Chania" width="460" height="345">
-                  <div class="carousel-caption">
-                    <h3>MindSlayer Logo</h3>
-                    <p>The base concept art which is shows the theme of the game</p>
-                  </div>
-                </div>
-          
-                <!-- <div class="item">
+
+        <!-- <div class="item">
                   <img src="./Images/MindSlayer/MindSlayerImage.png" alt="Chania" width="460" height="345">
                   <div class="carousel-caption">
                     <h3>Chania</h3>
@@ -72,21 +74,93 @@
                     <p>Beautiful flowers in Kolymbari, Crete.</p>
                   </div>
                 </div> -->
-            
-              </div>
-          
-              <!-- Left and right controls -->
-              <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-              </a>
-              <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-              </a>
-            </div>
-        </div>
 
-        <div style="display: flex;margin-top: 1rem;flex-direction: column;"><h1 style="margin: auto;">Project Name</h1><h2 style="font-size: 2rem;">Brief Description of Game</h2></div>
-    
-</body><grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration></html>
+      </div>
+
+      <!-- Left and right controls -->
+      <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="projectDiv">
+    <h1>Project Name</h1>
+    <h2>Brief Description of Game</h2>
+  </div>
+
+</body>
+
+</html>
+
+<!--
+  MindSlayer
+    MindSlayer is a First Person, Stealth, Parkour game created by Bone Fuel Studios for the Final Year game at University.
+
+  My Role in MindSlayer
+    The role that I took was the primary Gameplay Programmer, creating systems such as: Player Movement; AI; UI Backend; Ingame Feedback. All of these mechanics were created using a mixture of both C++ and Blueprints, the reason for doing so is to allow for Developers who aren't code savvy to add anything they need such as sound without needing to ask me or sift through the code. For optimisation reasons, all logic and variables are created within C++ and are then placed in the correct sequence in Blueprints.
+
+  Player Movement
+    The Player Movement handles moving the Player around the world and holds all the components that the player can utilise, UParkourMovementComponent and UUIManagerComponent.
+
+    Parkour System
+      The Parkour System was one of the main mechanics of MindSlayer so it needed a lot of work done to it. The component itself was inherited from the <a>UCharacterMovementComponent class in Unreal and was called UParkourMovementComponent. This component was expanded to allow for the extra options of the Movement System to be implemented like: Wall Run; Wall Climb. All of this code was created purely in C++ and was then attached onto the UMyParkourCharacter class since it was a component attached to the main <a>Actor.
+
+    Activation of Parkour
+      Throughout development, the Parkour System changed quite a bit to allow for more fine tuned ways of activating these movement options.
+    (Side by side)
+    Prototyping
+      When prototyping this mechanic, there were 4 <a>Line Casts sent out, 2 facing forwards, 1 facing right, 1 facing left, and each related to a means of activating a movement option, *lower one on the front for WallClimb, upper one on the front for mantling, one on the right for Wall Running on a Right Wall, one on the left for Wall Running on the Left Wall*(Image this maybe?)
+
+    Developing
+      A bit into development, this had to be changed since it was very awkward to know when someone was Wall Climbing and moving the camera, causing many bugs. The system was overhauled to use a <a>Sweep Cast to tell when the player was against a wall. *An angle is then obtained, using this angle allows for the knowledge of whether or not a player is wanting to wall run or wall climb*(Use an image to show the code / have the code snippet in the page itself)
+    (/Side by side)
+    (Side by side)
+    Wall Run
+      Wall Run was one of the two primary movement options added to this class, it allows for a player to move along a wall horizontally. It gets the local X Axis for the wall by using a <a>Cross Product for the up vector and the normal gained by the Sweep. By <a>Dot Producting that against the player's velocity allows for the game to know which way to move the player along the wall(Code). By multiplying it by the Run Speed set by the Developers, it gives the player horizontal movement based on the speed(Code).
+      Alongside this, when we start wall running, an event is called allowing for Developers to add extra things to the code when the wall running starts such as angling the camera. The same applies for ending the Wall Run (Code).
+    Wall Climb
+      Wall Climb was one of the two primary movement options added to this class, it allows for the player to move vertically up a wall. *Since we need the angle of the wall to use as the vector to move the player, we get the right vector based on the front vector and a fake up vector, using this we get the actual Z Axis and multiply this by the climb speed set by the Developers.*(Code)
+      With all this, there were events added for starting and stopping the Wall Climb, allowing Developers to add their own elements once they're called.
+    (/Side by side)
+  AI
+    The AI for MindSlayer was creating using a Finite State Machine, with 4 states it can be in, Patrol; Investigate; Chase; Stun.
+    (As a 2x2 grid)
+    Patrol
+      Patrol is the primary state the AI can go to, this state moves from point to point based on a <a>TArray of <a>Actors placed in the world. If the AI sees a player or hears a distraction, it activates an event to start investigating. During this state, if the AI has lost the player but was chasing them the SeenTime reduces.
+        (Blueprint)
+    Investigate
+      Investigate is the state in which the AI will go towards where the player/noise was. If the player has been seen for longer than the TimeToSeePlayer set by the Developers, it will go to Chase. If the player hasn't been seen for long enough and the AI reaches the location, it will search for a time set by Developers and then return to Patrol.
+      (Blueprint)
+    Chase
+      Chase is a simple state where the AI will attempt to go to the player's position. If the AI touches the player, an event is called and kills the player. If the AI loses sight of the player, it will go and investigate the last location the AI saw the player.
+      (Blueprint)
+    Stun
+      Stun is a state where the player hits them with a knife, this state stops the AI from doing anything for StunnedTime seconds and investigates where it is.
+      (Blueprint)
+  
+  UI Manager
+    The UUIManagerComponent was created as a hub for the <a>Blueprint Widgets to be stored and allow for any Widget changing to be handled through it.
+    (Side by side)
+    Spawning Widgets
+      When the component is placed on an actor, there is the ability to add to a <a>TArray of <a>TSubclassOf UUIBaseWidget, this is a class created which holds some extra data used in handling pausing the game. With this array populated, when the game starts, the Widgets are instanciated using <a>CreateWidget and are stored in the UIInstances <a>TArray, alongside giving them a pointer to the UIManager. (Code)
+    Changing Widgets
+      Changing Widgets is as simple as calling the SetForegroundWidget function and inputting the instanciated UI element you want to change to. There is an override called GetForegroundWidgetClass which takes in a <a>TSubclassOf UUIBaseWidget and saves a blueprint icon. When changing Widgets, we iterate through the UIInstances array and remove any active Widgets and display the new Widget. (Code)
+    (/Side by side)
+
+  Ingame Feedback
+    The ingame feedback system was implemented to allow for feedback to be sent ingame rather than having to go to a seperate window to send all the feedback. The implementation I created sends data to a Google Form using a URL with all the valid data being created.
+
+    Beginning the URL
+      With this implementation using Google Forms, a precreated URL is needed to get all the entry data and the actual URL it will all be sent, seperating the "&entry.xxxxxxx=" elements from the rest of the URL will give us the individual options to send, leaving the primary URL to be used for sending the information. This <a>article goes more in-depth on this entire procedure (Show blueprint of all this)
+    How Data Becomes URL Viable
+      The data which is sent has to be URL viable in order to not cause any issues, with this knowledge, a function was created which sifts through each set of data and changes every invalid char to a valid string and returns the now viable string. (Code)
+    Sending Data
+      With the newly acquired strings, the URL is constructed correctly and is then sent using the <a>FHttpModule class found within Unreal. Once successful, it calls an event which can then be used in Blueprints for what happens after(Code & Blueprint)
+
+-->

@@ -1,3 +1,4 @@
+/*Overriding Styles*/
 .container {
   max-width: 75%;
   width: auto;
@@ -11,4 +12,27 @@
 }
 .carousel-caption p {
   font-size: 1.25rem
+}
+/*Project Title and Description*/
+.projectDiv {
+  display: flex;
+  margin-top: 1rem;
+  flex-direction: column;
+}
+.projectDiv h1 {
+  font-size: 4rem;
+}
+.projectDiv h2 {
+  margin:auto;
+  font-size:3rem;
+}
+.projectDiv h2::after {
+  height:0;
+}
+.projectDiv h3 {
+  font-size:2rem;
+}
+.projectDiv p {
+  margin:auto;
+  font-size:1.75rem;
 }
