@@ -1,6 +1,6 @@
 /*Overriding Styles*/
 .container {
-  max-width: 75%;
+  max-width: 100%;
   width: auto;
 }
 .active img {
@@ -13,26 +13,69 @@
 .carousel-caption p {
   font-size: 1.25rem
 }
+a {
+  color:#aaa;
+}
+h3 {
+    font-size:2.5rem;
+  margin:1rem;
+  padding:1.25rem;
+    text-align: center;
+}
+h2 {
+    margin:auto;
+  font-size:3rem;
+}
+h1 {
+    font-size: 4rem;
+  margin: auto;
+  margin-bottom:1rem;
+  margin-top:1rem;
+}
+p {
+  font-size:1.75rem;
+  margin-bottom: 2rem;
+  max-width: 60%;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:50%;
+  margin:auto;
+}
+
 /*Project Title and Description*/
 .projectDiv {
   display: flex;
   margin-top: 1rem;
   flex-direction: column;
 }
-.projectDiv h1 {
-  font-size: 4rem;
-}
-.projectDiv h2 {
-  margin:auto;
-  font-size:3rem;
-}
 .projectDiv h2::after {
   height:0;
 }
-.projectDiv h3 {
-  font-size:2rem;
+
+/*Side by Side view*/
+.sidebyside {
+  display:flex;
+  flex-direction:row;
+  min-height: fit-content;
 }
-.projectDiv p {
-  margin:auto;
-  font-size:1.75rem;
+.sidebysideElement {
+  flex:50;
+  display:flex;
+  flex-direction: column;
+}
+.sidebysideElement code {
+  white-space: pre-wrap !important;
+  background: #444 !important;
+  max-width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+.imgCaption {
+  
+  font-size: 1.25rem;
 }

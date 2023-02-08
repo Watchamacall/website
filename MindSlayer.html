@@ -11,11 +11,15 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">  
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <!---Prism---->
+  <script src="JavaScript/prism.js"></script>
+  <link rel="stylesheet" href="CSS/prism.css">
   <!--Custom-->
   <link rel="stylesheet" href="CSS/stylesheet.css">
   <script src="JavaScript/scripts.js"></script>
   <link href="MindSlayer_files/css.css" rel="stylesheet">
   <link href="CSS/ProjectStylesheet.css" rel="stylesheet">
+
 </head>
 
 <body data-new-gr-c-s-check-loaded="8.904.0" data-gr-ext-installed="">
@@ -89,11 +93,91 @@
     </div>
   </div>
 
-  <div class="projectDiv">
-    <h1>Project Name</h1>
-    <h2>Brief Description of Game</h2>
+  <div class="projectDiv" style="">
+    <h1>MindSlayer</h1>
+    <p>MindSlayer is a First Person, Stealth, Parkour game created by Bone Fuel Studios for the Final Year game at University.</p>
   </div>
+  <div class="projectDiv">
+    <h2>My Role in MindSlayer</h2>
+    <p>The role that I took was the primary Gameplay Programmer, creating systems such as: Player Movement; AI; UI Backend; Ingame Feedback. All of these mechanics were created using a mixture of both C++ and Blueprints, the reason for doing so is to allow for Developers who aren't code savvy to add anything they need such as sound without needing to ask me or sift through the code. For optimisation reasons, all logic and variables are created within C++ and are then placed in the correct sequence in Blueprints.</p>
 
+  </div><div class="projectDiv">
+    <h2>Player Movement</h2>
+    <p>The Player Movement handles moving the Player around the world and holds all the components that the player can utilise, UParkourMovementComponent and UUIManagerComponent.</p>
+
+  </div><div class="projectDiv">
+    <h3>Parkour System</h3>
+    <p>The Parkour System was one of the main mechanics of MindSlayer so it needed a lot of work done to it. The component itself was inherited from the <a href="#" style="">UCharacterMovementComponent</a> class in Unreal and was called UParkourMovementComponent. This component was expanded to allow for the extra options of the Movement System to be implemented like: Wall Run; Wall Climb. All of this code was created purely in C++ and was then attached onto the UMyParkourCharacter class since it was a component attached to the main <a href="#">Actor</a></p>
+
+  </div><div class="sidebyside">
+  <div class="sidebysideElement">
+    <h3>Prototyping</h3>
+    <p>The Parkour System was one of the main mechanics of MindSlayer so it needed a lot of work done to it. The component itself was inherited from the <a href="#">UCharacterMovementComponent</a>. When prototyping this mechanic, there were 4 <a href="#">Line Casts</a> sent out, 2 facing forwards, 1 facing right, 1 facing left, and each related to a means of activating a movement option.</p>
+
+  <img src="Images/MindSlayer/PrototypeParkourSystem.png"><p class="imgCaption">Showing where the line casts were on the prototype system</p></div><div class="sidebysideElement">
+    <h3>Developing</h3>
+    <p>A bit into development, this had to be changed since it was very awkward to know when someone was Wall Climbing and moving the camera, causing many bugs. The system was overhauled to use a <a href="#">Sweep Cast</a> to tell when the player was against a wall.</p>
+
+  <code data-prismjs-copy="Copy this code snippet" class="language-cpp" style="">
+FVector pawnForwardVector = GetCharacterOwner()-&gt;GetActorForwardVector().GetSafeNormal();
+
+float angle = 180 - DegreesFromVectors(hit.ImpactNormal, pawnForwardVector); //Angle we are facing wall (180 is facing wall directly so minus 180 at the start to make it the actual angle)
+
+	//UE_LOG(LogTemp, Display, TEXT("impactNormal is: %s"), *hit.ImpactNormal.ToString()); //DEBUG
+
+
+
+	//Wall Climbing is between 0 and maxAngleToClimbOn
+	if (angle &lt; maxAngleToClimbOn &amp;&amp; !bIsWallRunning)
+	{
+			...
+	}
+	//Wall Running is between 90 to maxAngleToRunOn and 90 to -maxAngleToRunOn
+	else if (angle &lt; 90 + maxAngleToRunOn &amp;&amp; angle &gt; 90 - maxAngleToRunOn &amp;&amp; !bIsWallClimbing &amp;&amp; Velocity.Size() &gt; minParkourSpeed)
+	{
+				...
+	}
+</code><p>The code snippet above shows how I get the angle and how it is used to decide whether the player is looking to Wall Climb or Wall Run</p></div>
+  
+  
+</div>
+
+
+
+
+<div class="projectDiv"><h3>Parkour Specifiers</h3><div class="sidebyside"><div class="sidebysideElement"><h3>Wall Climb</h3><p>Wall Climb was one of the two primary movement options added to this class, it allows for the player to move vertically up a wall. 
+</p>
+<code class="language-cpp" style="background: #444;">
+if (deltaTime &lt; MIN_TICK_TIME)
+{
+	return;
+}
+bIsWallClimbing = true; //Make sure that we check that we are in fact climbing
+
+//UE_LOG(LogTemp, Display, TEXT("Vector is: %s"), *GetBestDirectionOffActor(hit.GetActor()).ToString() );
+
+FVector yAxis = hit.ImpactNormal; //This is the downwards angle of the wall
+FVector xAxis = FVector::CrossProduct(hit.ImpactNormal, FVector::UpVector); //The local Right vector based on a directly up Z Axis
+FVector zAxis = FVector::CrossProduct(xAxis, yAxis); // Finding the actual Z Axis based on the Y and X, make sure it's the right way up otherwise goes down instead of up
+FVector initialLocation = GetCharacterOwner()-&gt;GetActorLocation();
+	
+float angle = DegreesFromVectors(GetCharacterOwner()-&gt;GetActorForwardVector().GetSafeNormal(), zAxis);
+
+if (startClimb)
+{
+  SetCapsuleRotation(FRotator(0, angle * -1, 0)); //Negative one to make it rotate in the correct direction
+}
+
+FVector movementVelocity = climbSpeed * zAxis;
+
+MoveUpdatedComponent(movementVelocity * deltaTime, GetCharacterOwner()-&gt;GetActorRotation(), true, nullptr, ETeleportType::None);
+
+FVector newLocation = GetCharacterOwner()-&gt;GetActorLocation();
+time += FVector::Dist(initialLocation, newLocation);
+
+</code><p>  *Since we need the angle of the wall to use as the vector to move the player, we get the right vector based on the front vector and a fake up vector, using this we get the actual Z Axis and multiply this by the climb speed set by the Developers.*(Code)
+      With all this, there were events added for starting and stopping the Wall Climb, allowing Developers to add their own elements once they're called.</p></div><div class="sidebysideElement"><h3>Wall Run</h3><p>Wall Run was one of the two primary movement options added to this class, it allows for a player to move along a wall horizontally. It gets the local X Axis for the wall by using a &lt;a&gt;Cross Product for the up vector and the normal gained by the Sweep. By &lt;a&gt;Dot Producting that against the player's velocity allows for the game to know which way to move the player along the wall(Code). By multiplying it by the Run Speed set by the Developers, it gives the player horizontal movement based on the speed(Code).
+      Alongside this, when we start wall running, an event is called allowing for Developers to add extra things to the code when the wall running starts such as angling the camera. The same applies for ending the Wall Run (Code).</p></div></div></div>
 </body>
 
 </html>
@@ -112,13 +196,13 @@
       The Parkour System was one of the main mechanics of MindSlayer so it needed a lot of work done to it. The component itself was inherited from the <a>UCharacterMovementComponent class in Unreal and was called UParkourMovementComponent. This component was expanded to allow for the extra options of the Movement System to be implemented like: Wall Run; Wall Climb. All of this code was created purely in C++ and was then attached onto the UMyParkourCharacter class since it was a component attached to the main <a>Actor.
 
     Activation of Parkour
-      Throughout development, the Parkour System changed quite a bit to allow for more fine tuned ways of activating these movement options.
+      Throughout development, the Parkour System changed quite a bit to allow for more fine tuned ways of activating these movement options.   
     (Side by side)
     Prototyping
-      When prototyping this mechanic, there were 4 <a>Line Casts sent out, 2 facing forwards, 1 facing right, 1 facing left, and each related to a means of activating a movement option, *lower one on the front for WallClimb, upper one on the front for mantling, one on the right for Wall Running on a Right Wall, one on the left for Wall Running on the Left Wall*(Image this maybe?)
+      When prototyping this mechanic, there were 4 <a href='#'>Line Casts</a> sent out, 2 facing forwards, 1 facing right, 1 facing left, and each related to a means of activating a movement option, *lower one on the front for WallClimb, upper one on the front for mantling, one on the right for Wall Running on a Right Wall, one on the left for Wall Running on the Left Wall*(Image this maybe?)
 
     Developing
-      A bit into development, this had to be changed since it was very awkward to know when someone was Wall Climbing and moving the camera, causing many bugs. The system was overhauled to use a <a>Sweep Cast to tell when the player was against a wall. *An angle is then obtained, using this angle allows for the knowledge of whether or not a player is wanting to wall run or wall climb*(Use an image to show the code / have the code snippet in the page itself)
+      A bit into development, this had to be changed since it was very awkward to know when someone was Wall Climbing and moving the camera, causing many bugs. The system was overhauled to use a <a href='#'>Sweep Cast</a> to tell when the player was against a wall. *An angle is then obtained, using this angle allows for the knowledge of whether or not a player is wanting to wall run or wall climb*(Use an image to show the code / have the code snippet in the page itself)
     (/Side by side)
     (Side by side)
     Wall Run
@@ -164,3 +248,42 @@
       With the newly acquired strings, the URL is constructed correctly and is then sent using the <a>FHttpModule class found within Unreal. Once successful, it calls an event which can then be used in Blueprints for what happens after(Code & Blueprint)
 
 -->
+<!-- FVector pawnForwardVector = GetCharacterOwner()->GetActorForwardVector().GetSafeNormal();
+
+
+				float angle = 180 - DegreesFromVectors(hit.ImpactNormal, pawnForwardVector); //Angle we are facing wall (180 is facing wall directly so minus 180 at the start to make it the actual angle)
+
+				//UE_LOG(LogTemp, Display, TEXT("impactNormal is: %s"), *hit.ImpactNormal.ToString()); //DEBUG
+
+
+
+				//Wall Climbing is between 0 and maxAngleToClimbOn
+				if (angle < maxAngleToClimbOn && !bIsWallRunning)
+				{
+					if (bIsWallClimbing && hit.GetComponent() == wallClimbComponent || bIsHanging || bWantsToMount)
+					{
+						if (bWantsToDrop || bIsHanging)
+						{
+							return;
+						}
+						if (CanHang() && !bWantsToMount)
+						{
+							SetMovementMode(MOVE_Hang);
+						}
+						return;
+					}
+					StartWallClimbing();
+					return;
+				}
+				//Wall Running is between 90 to maxAngleToRunOn and 90 to -maxAngleToRunOn
+				else if (angle < 90 + maxAngleToRunOn && angle > 90 - maxAngleToRunOn && !bIsWallClimbing && Velocity.Size() > minParkourSpeed)
+				{
+					UE_LOG(LogTemp, Display, TEXT("WE WANT TO WALL RUN!"));
+					if (bIsWallRunning)
+					{
+						return;
+					}
+
+					StartWallRunning();
+					return;
+				}-->
