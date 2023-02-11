@@ -196,15 +196,21 @@ margin: 0;
 margin-bottom: 1rem;
 }
 .projects ul li h3 {
-padding: 30px;
-padding-top: 0;
+  padding: 0 2rem;
   color: #ccc;
+  margin-bottom: 0;
 }
+
 .projects ul li img {
 
 max-width: 95%;
 max-height: 95%;
 margin: auto;
+}
+.projectLanguageIcon {
+  max-width: 15% !important;
+  margin:0.1rem 0 0.1rem 1rem !important;
+  
 }
 /*#endregion*/
 /*#region Contact*/
@@ -282,14 +288,13 @@ padding: 0;
 /*#region Footer*/
 .footer {
 position: relative;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  text-align:right;
+left: 0;
+bottom: 0;
+width: -moz-available;
+text-align:right;
 border: 1px solid black;
-max-width: -moz-available;
-padding-right: 1rem;
-  background-color:#222;
+background-color:#222;
+padding:1rem;
 }
 /*#endregion*/
 

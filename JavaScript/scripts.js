@@ -10,3 +10,7 @@ function NavbarOpen() {
 function SendTo(website) {
   window.location.assign(website);
 }
+
+function SendToInternal(htmlPage) {
+  SendTo("https:\\watchamacall.co.uk/" + htmlPage);
+}
