@@ -105,7 +105,6 @@ background-attachment: fixed;
 display: flex;
 }
 .headerText {
-  
   color: white;
   height: 100%;
   justify-content: center;
@@ -114,22 +113,25 @@ display: flex;
   flex-direction: column;
 }
 .headerText h2 {
-  
   margin: 0;
   font-size: 5rem;
 }
 .headerText h2::after {
-  
   content: none;
 }
 /*#endregion*/
 /*#region Informational*/
 .informational {
-
   max-width: -moz-available;
 }
 .informational ul {
-margin-top: 0;
+  margin-top: 0;
+}
+.informational ul li {
+  max-height: fit-content;
+}
+.informational ul li a {
+    color:#aaa;
 }
 .informationLink {
   
@@ -211,6 +213,10 @@ margin: auto;
   max-width: 15% !important;
   margin:0.1rem 0 0.1rem 1rem !important;
   
+}
+.projectsCode {
+  display:flex;
+  flex-direction: row;
 }
 /*#endregion*/
 /*#region Contact*/

@@ -1,170 +1,182 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="index_files/font-awesome.min.css">
-    <link rel="stylesheet" href="CSS/stylesheet.css">
-    <script src="JavaScript/scripts.js"></script>
-    <link href="index_files/css.css" rel="stylesheet">
-</head>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="index_files/font-awesome.min.css">
+        <link rel="stylesheet" href="CSS/stylesheet.css">
+        <script src="JavaScript/scripts.js"></script>
+        <link href="index_files/css.css" rel="stylesheet">
+    </head>
 
-<body style="display: flex;flex-direction: column;">
+    <body style="display: flex;flex-direction: column;">
 
-    <div class="topnav" id="myTopnav">
-        <a href="#home" class="active">Home</a>
-        <a href="#news">About</a>
-        <a href="#contact">Projects</a>
-        <a href="#about">Resume</a>
-        <a href="javascript:void(0);" class="icon" onclick="NavbarOpen()">
-            <i class="fa fa-bars"></i>
-        </a>
-    </div>
-
-    <header>
-        <div style="display: flex;flex: 20;"></div>
-        <div class="headerText">
-            <h3 style="font-size: 2rem;">Welcome to,</h3>
-            <h2>Ryan Cole's Portfolio</h2>
-            <h3 style="padding-left: 20px;font-size: 1.75rem;">Games Programmer</h3>
+        <div class="topnav" id="myTopnav">
+            <a href="#home" class="active">Home</a>
+            <a href="#informational">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+            <a href="javascript:void(0);" class="icon" onclick="NavbarOpen()">
+                <i class="fa fa-bars"></i>
+            </a>
         </div>
-        <div style="display: flex;flex: 33.3333;"></div>
-    </header>
+
+        <header id="home">
+            <div style="display: flex;flex: 20;"></div>
+            <div class="headerText">
+                <h3 style="font-size: 2rem;">Welcome to,</h3>
+                <h2>Ryan Cole's Portfolio</h2>
+                <h3 style="padding-left: 20px;font-size: 1.75rem;">Games
+                    Programmer</h3>
+            </div>
+            <div style="display: flex;flex: 33.3333;"></div>
+        </header>
 
 
-    <div class="informational">
-        <ul>
-            <li>
-                <h2>Information</h2>
-                <div class="skill informationLink" onclick="SendTo('https://twitter.com/Watchamacall_')">
-                    <img class="skillImg" style="height: 100px;width: 100px;margin-right: 10px;"
-                        src="Images/Twitter.png">
-
-                    <div style="display: flex;flex-direction: column;">
-                        <div class="skillText">
-                            <h3 style="">Twitter</h3>
-
-                        </div>
-                        <div style="flex: 60;"></div>
-                    </div>
-                </div>
-                <div class="skill informationLink" onclick="SendTo('https://www.linkedin.com/in/ryan-cole-0506921ba/')">
-                    <img class="skillImg" style="height: 100px;width: 100px;margin-right: 10px;"
-                        src="Images/LinkedIn.png">
-
-                    <div style="display: flex;flex-direction: column;">
-                        <div class="skillText">
-                            <h3>LinkedIn</h3>
-
-                        </div>
-                        <div style="flex: 60;"></div>
-                    </div>
-                </div>
-                <div class="skill informationLink" onclick="SendTo('https://github.com/watchamacall')">
-                    <img class="skillImg" style="height: 100px;width: 100px;margin-right: 10px;"
-                        src="Images/Github.png">
-
-                    <div style="display: flex;flex-direction: column;">
-                        <div class="skillText">
-                            <h3>GitHub</h3>
-
-                        </div>
-                        <div style="flex: 60;"></div>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <h2>Who Am I?</h2>
-                <h3 style="padding: 30px;padding-bottom: 0px;">Games Programmer</h3>
-                <p style="padding: 30px;padding-top: 0px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
-                    sagittis velit purus, non tempor enim aliquam vitae. In id nisl vitae libero scelerisque malesuada
-                    tristique ut massa.</p>
-            </li>
-            <li>
-                <h2>Skills</h2>
-                <div class="skill">
-                    <img class="skillImg" src="Images/Unreal.png">
-                    <div class="skillText">
-                        <h3>Unreal</h3>
-                        <p>Working C++ into Blueprints</p>
-                    </div>
-                </div>
-                <div class="skill">
-                    <img class="skillImg" src="Images/Unity.png">
-                    <div class="skillText">
-                        <h3>Unity</h3>
-                        <p>C# Things</p>
-                    </div>
-                </div>
-            </li>
-        </ul>
-    </div>
-    <div class="projects">
-        <h2 style="margin-left: 10vw;">My Projects</h2>
-        <div class="projects">
+        <div id="informational" class="informational">
             <ul>
-                <li onclick="document.location.href = 'MindSlayer.html'">
-                    <h2>MindSlayer</h2>
-                    <h3>Year 3 Team Project. Made in Unreal 5 &amp; Blueprints; C++</h3>
-                    <div style="display=flex; flex-direction=column;">
-                    <img class="projectLanguageIcon" src="Images/Unreal.png">
-                    <img class="projectLanguageIcon" src="Images/CPPLogo.png">
-                </div>
-                    <img src="Images/MindslayerImage.png">
-                </li>
-                <li onclick="document.location.href = 'SFAS2023.html'">
-                    <h2>Search For A Star 2023</h2>
-                    <h3>Project made as part of SFAS2023. Made in Unreal 5 & C++</h3><img src="index_files/MindSlayerImage.png">
-                </li>
-                <li onclick="document.location.href = projectName">
-                    <h2>Project Title</h2>
-                    <h3>Project Details</h3><img src="index_files/MindSlayerImage.png">
-                </li>
-                <li onclick="document.location.href = projectName">
-                    <h2>Project Title</h2>
-                    <h3>Project Details</h3><img src="index_files/MindSlayerImage.png">
-                </li>
-                <li onclick="document.location.href = projectName">
-                    <h2>Project Title</h2>
-                    <h3>Project Details</h3><img src="index_files/MindSlayerImage.png">
-                </li>
-                <li onclick="document.location.href = projectName">
-                    <h2>Project Title</h2>
-                    <h3>Project Details</h3><img src="index_files/MindSlayerImage.png">
-                </li>
+                <li>
+                    <h2>Socials</h2>
+                    <div class="skill informationLink"
+                        onclick="SendTo('https://twitter.com/Watchamacall_')">
+                        <img class="skillImg" style="height: 100px;width:
+                            100px;margin-right: 10px;"
+                            src="Images/Twitter.png">
 
+                        <div style="display: flex;flex-direction: column;">
+                            <div class="skillText">
+                                <h3>Twitter</h3>
+
+                            </div>
+                            <div style="flex: 60;"></div>
+                        </div>
+                    </div>
+                    <div class="skill informationLink"
+                        onclick="SendTo('https://www.linkedin.com/in/ryan-cole-0506921ba/')">
+                        <img class="skillImg" style="height: 100px;width:
+                            100px;margin-right: 10px;"
+                            src="Images/LinkedIn.png">
+
+                        <div style="display: flex;flex-direction: column;">
+                            <div class="skillText">
+                                <h3>LinkedIn</h3>
+
+                            </div>
+                            <div style="flex: 60;"></div>
+                        </div>
+                    </div>
+                    <div class="skill informationLink"
+                        onclick="SendTo('https://github.com/watchamacall')">
+                        <img class="skillImg" style="height: 100px;width:
+                            100px;margin-right: 10px;"
+                            src="Images/Github.png">
+
+                        <div style="display: flex;flex-direction: column;">
+                            <div class="skillText">
+                                <h3>GitHub</h3>
+
+                            </div>
+                            <div style="flex: 60;"></div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <h2>Who Am I?</h2>
+                    <h3 style="padding: 2rem;padding-bottom: 0px;">Education</h3>
+                    <p style="padding-left: 3rem; padding-top: 0px;">
+                        Undergraduate student studying BSc(Hons) Computing For
+                        Games at <a href="https://www.falmouth.ac.uk/">Falmouth
+                            University</a>
+                    </p>
+                    <h3 style="padding: 2rem;padding-bottom: 0px;">Profession</h3>
+                    <p style="padding-left: 3rem; padding-top: 0px;">
+                        Games Programmer focusing on creating Mechanics for
+                        Games
+                    </p>
+
+                </li>
+                <li>
+                    <h2>Skills</h2>
+                    <div class="skill">
+                        <img class="skillImg" src="Images/Unreal.png">
+                        <div class="skillText">
+                            <h3>Unreal</h3>
+                            <p>Primarily C++ with Blueprint elements for
+                                Developer additions</p>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <img class="skillImg" src="Images/Unity.png">
+                        <div class="skillText">
+                            <h3>Unity</h3>
+                            <p>Using C# to create Mechanics</p>
+                        </div>
+                    </div>
+                </li>
             </ul>
         </div>
-    </div>
-    <div class="contactStart">
-        <ul>
-            <li class="contact">
-                <h2 style="padding: 1rem;">Send Me A Message!</h2>
-                <form>
-                    <div><input type="text" placeholder="Name *" required=""></div>
-                    <div><input required="" type="email" placeholder="Email *"></div>
-                    <div><textarea rows="7" required="" style=" "></textarea>
-                    </div>
-                    <div><button style=" ">
-                            <p style="color: #fff;">Submit</p>
-                        </button>
-                    </div>
-                </form>
-            </li>
-        </ul>
-    </div>
-    <grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration>
-    <style type="text/css"></style>
+        <div id="projects" class="projects">
+            <h2 style="margin-left: 10vw;">My Projects</h2>
+            <div class="projects">
+                <ul>
+                    <li onclick="document.location.href= 'MindSlayer.html'">
+                        <h2>MindSlayer</h2>
+                        <h3>Year 3 Team Game Project. Parkour/Horror Title.</h3>
+                        <div class="projectsCode">
+                            <img class="projectLanguageIcon"
+                                src="Images/Unreal.png">
+                            <img class="projectLanguageIcon"
+                                src="Images/CPPLogo.png">
+                        </div>
+                        <img src="Images/MindslayerImage.png">
+                    </li>
+                    <li onclick="document.location.href= 'SFAS2023.html'">
+                        <h2>Search For A Star 2023</h2>
+                        <h3>SFAS2023 Submission. </h3>
+                        <div class="projectsCode">
+                            <img class="projectLanguageIcon"
+                                src="Images/Unreal.png">
+                            <img class="projectLanguageIcon"
+                                src="Images/CPPLogo.png">
+                        </div>
+                        <img src="Images/SFAS2023.png">
+                    </li>
 
-    <div class="footer">
+                </ul>
+            </div>
+        </div>
+        <div id="contact" class="contactStart">
+            <ul>
+                <li class="contact">
+                    <h2 style="padding: 1rem;">Send Me A Message!</h2>
+                    <form>
+                        <div><input type="text" placeholder="Name *"
+                                required=""></div>
+                        <div><input required="" type="email" placeholder="Email
+                                *"></div>
+                        <div><textarea rows="7" required="" style=" "></textarea>
+                        </div>
+                        <div>
+                            <button>
+                                <p style="color: #fff;">Submit</p>
+                            </button>
+                        </div>
+                    </form>
+                </li>
+            </ul>
+        </div>
+        <style type="text/css"></style>
 
-        <a href="https://www.vecteezy.com/free-vector/facebook"
-            style="text-align: right;margin: auto;margin-right: 0;text-decoration: none;color: #ccc;">Facebook Vectors
-            by Vecteezy</a>
-    </div>
+        <div class="footer">
+
+            <a href="https://www.vecteezy.com/free-vector/facebook"
+                style="text-align: right;margin: auto;margin-right:
+                0;text-decoration: none;color: #ccc;">Facebook Vectors
+                by Vecteezy</a>
+        </div>
 
 
-</body>
+    </body>
 
 </html>

@@ -25,8 +25,8 @@
 <body data-new-gr-c-s-check-loaded="8.904.0" data-gr-ext-installed="">
   <div class="topnav" id="myTopnav">
     <a href="./index.html">Home</a>
-    <a href="#news">About</a>
-    <a href="#contact" class="active">Projects</a>
+    <a href="#" class="active">MindSlayer</a>
+    <a href="SFAS2023.html">SFAS2023</a>
     <a href="#about">Resume</a>
     <a href="javascript:void(0);" class="icon" onclick="NavbarOpen()">
       <i class="fa fa-bars"></i>
@@ -93,21 +93,23 @@
     </div>
   </div>
 
-  <div class="projectDiv" style="">
+  <div class="projectDiv">
     <h1>MindSlayer</h1>
-    <p>MindSlayer is a First Person, Stealth, Parkour game created by Bone Fuel Studios for the Final Year game at
-      University.</p>
+    <p>
+      MindSlayer is a First Person, Stealth, Parkour game created by Bone Fuel Studios as part of my Final Year at University. The team consisted of 6 Artists, 2 Designers, 1 Animator and 1 Programmer plus 1 Freelance Programmer.
+    </p>
   </div>
   <div class="projectDiv">
-    <h2>My Role in MindSlayer</h2>
-    <p>The role that I took was the primary Gameplay Programmer, creating systems such as: Player Movement; AI; UI
-      Backend; Ingame Feedback. All of these mechanics were created using a mixture of both C++ and Blueprints, the
-      reason for doing so is to allow for Developers who aren't code savvy to add anything they need such as sound
-      without needing to ask me or sift through the code. For optimisation reasons, all logic and variables are created
-      within C++ and are then placed in the correct sequence in Blueprints.</p>
+    <h3>My Role in MindSlayer</h3>
+    <p>
+      My role within the development of MindSlayer was being the primary Gameplay Programmer. I was in charge of creating the <a href="#playerMovement">Player Movement</a>; <a href="#ai">AI</a>; <a href="#uiManager">UI Backend</a>; <a href="#feedback">In-Game Feedback System</a>.
+    </p>
+
+    <h3>C++ and Blueprints</h3>
+    <p>When it came to developing the game, I used both C++ and Blueprints. All logic was created in C++ with events being exposed to Blueprints to allow for Developers who are not code savvy to add things like sound</p>
 
   </div>
-  <div class="projectDiv">
+  <div id="playerMovement"class="projectDiv">
     <h2>Player Movement</h2>
     <p>The Player Movement handles moving the Player around the world and holds all the components that the player can
       utilise, UParkourMovementComponent and UUIManagerComponent.</p>
@@ -233,8 +235,8 @@ time += FVector::Dist(initialLocation, newLocation);
     </div>
   </div>
 
-  <div class="projectDiv">
-    <h3>AI</h3>
+  <div id="ai" class="projectDiv">
+    <h2>AI</h2>
 
     <div class="sidebyside">
 
@@ -277,8 +279,8 @@ time += FVector::Dist(initialLocation, newLocation);
 
   </div>
 
-  <div class="projectDiv">
-    <h3>UI Manager</h3>
+  <div id="uiManager" class="projectDiv">
+    <h2>UI Manager</h2>
 
     <div class="sidebyside">
       
@@ -306,8 +308,8 @@ time += FVector::Dist(initialLocation, newLocation);
       </div>
     </div>
   </div>
-  <div class="projectDiv">
-    <h3>Feedback Form</h3>
+  <div id="feedback"class="projectDiv">
+    <h2>Feedback Form</h2>
     
     <div class="sidebyside">
       
