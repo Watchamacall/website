@@ -21,8 +21,8 @@
 <body data-new-gr-c-s-check-loaded="8.904.0" data-gr-ext-installed="">
   <div class="topnav" id="myTopnav">
     <a href="./index.html">Home</a>
-    <a href="#news">About</a>
-    <a href="#contact" class="active">Projects</a>
+    <a href="MindSlayer.html">MindSlayer</a>
+    <a href="#" class="active">SFAS2023</a>
     <a href="#about">Resume</a>
     <a href="javascript:void(0);" class="icon" onclick="NavbarOpen()">
       <i class="fa fa-bars"></i>
@@ -90,8 +90,56 @@
   </div>
 
   <div class="projectDiv">
-    <h1>Project Name</h1>
-    <h2>Brief Description of Game</h2>
+    <h1>Search For A Star 2023</h1>
+    <p>Hole in the Wall is a game created for the Search For a Star 2023 Game Jam. It involves having to match a your shape to the hole in the wall, you pass if you get within a range to the wall or lose a life if not.</p>
+  </div>
+
+  <div class="projectDiv">
+    <h3>Mesh Generation</h3>
+    <p>
+      In order for this game to have been created, a mesh would have to be generated during runtime. Luckily, Unreal has a <a href="#">UProceduralMesh</a> class that allows for custom mesh to be created. Inheriting this class allowed for the needed parameters to be added as variables and edited during runtime.
+    </p>
+
+  </div>
+  <div class="sidebyside">
+    <div class="sidebysideElement">
+      <h3>Existing Codebase</h3>
+      <p>
+        The first job when completing this jam is knowing how the existing codebase works. To do this, I commented a lot of the variables and functions in regards to whats in the functions and what they are.
+      </p>
+      
+      <code data-prismjs-copy="Copy this code snippet" class="language-cpp">
+
+      </code>
+    </div>
+    <div class="sidebysideElement">
+      <h3>Generating Mesh</h3>
+      <p>
+        Generating mesh for the main game mechanics was essential, the <a href="#">UProceduralMesh</a> class has a function called <a href="#">CreateMesh_LinearColor</a> which allows for all the difficult part of rendering the mesh to be done automatically.
+        In order to get the verticies locations, I used a circle as a base and utilised trigonometry to figure out where on the outer circle they should be.
+      </p>
+
+      <code data-prismjs-copy="Copy this code snippet" class="language-cpp">
+
+      </code>
+
+      <p>
+          Triangles were simple enough with a for loop iterating adding the first vertex then the CurrentTri + 1 and CurrentTri + 2 (Code)
+      </p>
+
+      <code data-prismjs-copy="Copy this code snippet" class="language-cpp">
+
+      </code>
+        <p>
+          There is no need for special code for texture generation since there is only simple shapes being constructed.
+        </p>
+
+        <code data-prismjs-copy="Copy this code snippet" class="language-cpp">
+
+        </code>  
+    </div>
+
+
   </div>
 
 </body>
