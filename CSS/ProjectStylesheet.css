@@ -44,6 +44,10 @@ img {
   max-width:50%;
   margin:auto;
 }
+video {
+  display:block;
+  margin:0 auto;
+}
 
 /*Project Title and Description*/
 .projectDiv {
@@ -66,7 +70,7 @@ img {
   display:flex;
   flex-direction: column;
 }
-.sidebysideElement code {
+code {
   white-space: pre-wrap !important;
   background: #444 !important;
   max-width: 90%;
@@ -77,6 +81,23 @@ img {
   padding: 1rem !important;
 }
 .imgCaption {
-  
   font-size: 1.25rem;
+}
+
+@media screen and (max-width: 600px) {
+  .carousel-caption {
+    position: sticky;
+  }
+  .active img {
+    width: 100%;
+  }
+.sidebyside {
+  flex-direction: column;
+}
+img {
+  max-width:100%;
+}
+video {
+  max-width:100%;
+}
 }
