@@ -22,7 +22,7 @@
   <div class="topnav" id="myTopnav">
     <a href="./index.html">Home</a>
     <a href="MindSlayer.html">MindSlayer</a>
-    <a href="#" class="active">SFAS2023</a>
+    <a href="#" class="active">Hole In The Wall</a>
     <a href="DreamCollection.html">Dream Collection</a>
     <a href="#about">Resume</a>
     <a href="javascript:void(0);" class="icon" onclick="NavbarOpen()">
@@ -91,57 +91,361 @@
   </div>
 
   <div class="projectDiv">
-    <h1>Search For A Star 2023</h1>
-    <p>Hole in the Wall is a game created for the Search For a Star 2023 Game Jam. It involves having to match a your shape to the hole in the wall, you pass if you get within a range to the wall or lose a life if not.</p>
+    <h1>Hole In The Wall</h1>
+    <p>
+      Hole in the Wall is a game about moving a shape to match the hole in the wall coming towards you. This project was created as part of Search For A Star 2023.
+    </p>
   </div>
 
   <div class="projectDiv">
-    <h3>Mesh Generation</h3>
-    <p>
-      In order for this game to have been created, a mesh would have to be generated during runtime. Luckily, Unreal has a <a href="#">UProceduralMesh</a> class that allows for custom mesh to be created. Inheriting this class allowed for the needed parameters to be added as variables and edited during runtime.
-    </p>
+    <h3>Existing Codebase</h3>
 
   </div>
-  <div class="sidebyside">
-    <div class="sidebysideElement">
-      <h3>Existing Codebase</h3>
+    <div class="projectDiv">
+      <h3>Understanding The Codebase</h3>
       <p>
-        The first job when completing this jam is knowing how the existing codebase works. To do this, I commented a lot of the variables and functions in regards to whats in the functions and what they are.
+        When starting the challenge, the base code is all uncommented and required commenting to understand how each class and function worked.
+        <br><br>
+        If there were any parts of the code I couldn’t understand, I would use breakpoints within the IDE and go through the function bit by bit to understand how it worked, then commenting it all.
+      </p>
+    </div>
+    <div class="sidebysideElement">
+      <h3>Changing The Codebase</h3>
+      <p>
+        There were elements to the Codebase that were changed in order to work with the way the project was heading
+        <br>
+        An example of this would be the UI Elements, below is the original and what it was changed to
+      </p>
+
+      <div class="sidebyside">
+        <div class="sidebysideElement">
+          <h3>Original</h3>
+          <code data-prismjs-copy="Copy this code snippet" class="language-cpp">
+STBPlayerController.cpp
+
+void ASTBPlayerController::CreateUI()
+{
+  Widgets.Init(nullptr, static_cast&#60;int&#62;(ESTBGameMode::NumModes));
+  SetupScreen(ESTBGameMode::Intro, IntroClass, TEXT("Intro"));
+  SetupScreen(ESTBGameMode::MainMenu, MenuClass, TEXT("MainMenu"));
+  SetupScreen(ESTBGameMode::Settings, SettingsClass, TEXT("Settings"));
+  SetupScreen(ESTBGameMode::Playing, PlayingClass, TEXT("Playing"));
+  SetupScreen(ESTBGameMode::GameOver, GameOverClass, TEXT("GameOver"));
+  SetupScreen(ESTBGameMode::Outro, OutroClass, TEXT("Outro"));
+  ShowUI(ESTBGameMode::Intro);
+}
+          </code>
+        </div>
+
+        <div class="sidebysideElement">
+          <h3>Changed</h3>
+          <code data-prismjs-copy="Copy this code snippet" class="language-cpp">
+STBPlayerController.cpp
+void ASTBPlayerController::CreateUI()
+{
+  Widgets.Init(nullptr, static_cast&#60;int&#62;(ESTBGameMode::NumModes));
+  SetupScreen();
+  ShowUI(ESTBGameMode::Intro);
+}
+
+void ASTBPlayerController::SetupScreen(ESTBGameMode State, TSubclassOf&#60;UScreen&#62; Class, FName Name)
+{
+  UScreen* Screen = NewObject&#60;UScreen&#62;(this, Class, Name);
+  Screen-&#62;bIsFocusable = true;
+  Screen-&#62;SetOwningPlayer(this);
+  Screen-&#62;AddToViewport(0);
+  Widgets[static_cast&#60;int&#62;(State)] = Screen;
+}
+
+void ASTBPlayerController::SetupScreen()
+{
+  TArray&#60;TSubclassOf&#60;UScreen&#62;&#62; keys;
+  UI_Classes.GenerateKeyArray(keys);
+
+  for (size_t i = 0; i &#60; UI_Classes.Num(); i++)
+  {
+    SetupScreen(*UI_Classes.Find(keys[i]), keys[i], keys[i].Get()-&#62;GetFName());
+  }
+}
+          </code>
+        </div>
+      </div>
+      <div class="sidebyside">
+        <div class="sidebysideElement">
+            <code data-prismjs-copy="Copy this code snippet" class="language-cpp">
+STBPlayerController.h
+UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "UI")
+  TSubclassOf&#60;UScreen&#62; IntroClass;
+
+UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "UI")
+  TSubclassOf&#60;UScreen&#62; MenuClass;
+
+UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "UI")
+  TSubclassOf&#60;UScreen&#62; SettingsClass;
+
+UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "UI")
+  TSubclassOf&#60;UScreen&#62; PlayingClass;
+
+UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "UI")
+  TSubclassOf&#60;UScreen&#62; GameOverClass;
+
+UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "UI")
+  TSubclassOf&#60;UScreen&#62; OutroClass;
+              </code>
+        </div>
+        <div class="sidebysideElement">
+          <code data-prismjs-copy="Copy this code snippet" class="language-cpp">
+STBPlayerController.h
+/*
+  * Array of all the classes UI 
+*/
+UPROPERTY(EditAnywhere, BlueprintReadOnly, Category="UI|General")
+  TMap&#60;TSubclassOf&#60;UScreen&#62;, ESTBGameMode&#62; UI_Classes;
+          </code>
+        </div>
+      </div>
+      <p>
+        The FProgressionLevelData was also changed to include the Mesh Generation data for each level, the code below shows the difference
+      </p>
+      <div class="sidebyside">
+        <div class="sidebysideElement">
+            <code data-prismjs-copy="Copy this code snippet" class="language-cpp">
+USTRUCT(BlueprintType)
+struct FProgressionLevelData
+{
+	GENERATED_BODY()
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+	TArray<FProgressionCharacterData> Characters;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+	FBoxSphereBounds BallBounds;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+	float RequiredDistance;	
+};
+              </code>
+        </div>
+        <div class="sidebysideElement">
+          <code data-prismjs-copy="Copy this code snippet" class="language-cpp">
+USTRUCT(BlueprintType)
+struct FProgressionLevelData
+{
+GENERATED_BODY()
+
+/*
+  * The Actors you want to spawn in to show (DEPRECATED)
+*/
+UPROPERTY(EditAnywhere, BlueprintReadOnly)
+  TArray<FProgressionCharacterData> Characters;
+/*
+  * The Bounds in which the ball can spawn in
+*/
+UPROPERTY(EditAnywhere, BlueprintReadOnly)
+  FBoxSphereBounds BallBounds;
+/*
+  * The distance for this level in which the player's mesh can be out (The Lower, The Stricter)
+*/
+UPROPERTY(EditAnywhere, BlueprintReadOnly)
+  float Tolerance;	
+/*
+  * The amount of time in seconds it takes for the wall to reach the Player's Mesh
+*/
+UPROPERTY(EditAnywhere, BlueprintReadOnly)
+  float TimeTillWallHit = 0.f;
+/*
+  * The amount of sides that are on the generated Mesh
+*/
+UPROPERTY(EditAnywhere, BlueprintReadOnly)
+  int AmountOfSidesOnShape;
+};
+          </code>
+        </div>
+        
+      </div>
+      <p>
+        A major change to the original codebase was changing the PlayingScreen Select_Implementation to select a vertex of an object instead of guessing, the code below shows the comparison.
+      </p>
+      <div class="sidebyside">
+        <div class="sidebysideElement">
+            <code data-prismjs-copy="Copy this code snippet" class="language-cpp">
+void UPlayingScreen::Select_Implementation()
+{
+  if(PlayingState == EPlayingState::Guessing)
+  {
+    if(IsValid(PlayerController))
+    {
+      const bool bCorrect = PlayerController->TryMove();
+      if(!bCorrect)
+      {
+        if(const UGameplay* Gameplay = PlayerController->GetGameplay())
+        {
+          const int Lives = Gameplay->GetLives();
+          SetLives(Lives);
+        }					
+      }
+
+      DoReveal(bCorrect);
+    }
+  }
+  else if(PlayingState == EPlayingState::Shown)
+  {
+    Reset();
+  }
+}
+            </code>
+        </div>
+        <div class="sidebysideElement">
+          <code data-prismjs-copy="Copy this code snippet" class="language-cpp">
+void UPlayingScreen::Select_Implementation()
+{
+  if (IsValid(PlayerController))
+  {
+    if (PlayingState == EPlayingState::Guessing)
+    {
+      
+      FVector WorldLocation;
+      FVector WorldDirection;
+
+      //Since the GuessPosition origin is the center of the screen whilst the Deproject origin is top left, add the Viewport * .5f to center it and get accurate direction
+      FVector2D ViewportSizeTotal;
+
+      auto Viewport = GWorld->GetGameViewport();
+      Viewport->GetViewportSize(ViewportSizeTotal);
+
+      FVector2D AccuracyMulti = FVector2D(ViewportSizeTotal.X / 1920.f , ViewportSizeTotal.Y / 1080.f);
+
+      FVector2D GuessPosition = (Cast<UCanvasPanelSlot>(Images[GuessImageIndex]->Slot)->GetPosition()* AccuracyMulti);
+        
+
+      ViewportSizeTotal *= .5f;
+      ViewportSizeTotal = FVector2D(ViewportSizeTotal.X + GuessPosition.X, ViewportSizeTotal.Y + GuessPosition.Y);
+
+      GetWorld()->GetFirstPlayerController()->SetMouseLocation(ViewportSizeTotal.X, ViewportSizeTotal.Y);
+
+      FHitResult Hit;
+
+      
+      if (PlayerController->GetHitResultAtScreenPosition(ViewportSizeTotal, ECollisionChannel::ECC_WorldDynamic, false, Hit))
+      {
+        if (UStaticVertexCollider* Collider = Cast<UStaticVertexCollider>(Hit.GetComponent()))
+        {
+          PlayerController->SetSelectedVertex(Collider->VertexNo);
+          Images[GuessImageIndex]->SetBrushTintColor(SelectedColor);
+        }
+      }
+    }
+    else if (PlayingState == EPlayingState::Shown) //After the whole part of the game
+    {
+      Reset();
+    }
+  }
+}   
+          </code>
+        </div>
+      </div>
+      <p>
+        The cursor selection within this had some trouble with it, when selecting the widget xy locations, they would not match the actual xy value of the world and would cause the game to not actually be playable. A fix was created by dividing the viewport by 1920 and 1080 for the x and y values respectively. The code above shows this implementation.
       </p>
       
-      <code data-prismjs-copy="Copy this code snippet" class="language-cpp">
-
-      </code>
-    </div>
-    <div class="sidebysideElement">
       <h3>Generating Mesh</h3>
       <p>
-        Generating mesh for the main game mechanics was essential, the <a href="#">UProceduralMesh</a> class has a function called <a href="#">CreateMesh_LinearColor</a> which allows for all the difficult part of rendering the mesh to be done automatically.
-        In order to get the verticies locations, I used a circle as a base and utilised trigonometry to figure out where on the outer circle they should be.
+        This class was created with the sole purpose of creating the procedural mesh which is shown on the screen
+        <br>
+        This class is inherited from <a href=”#”>UProceduralMeshComponent</a> and adds variables for the mesh such as Triangles, Verticies, UVs. Within this class there are functions for generating the mesh based on these variables.
+        <br>
+        The code below is the UpdateMesh function
       </p>
-
       <code data-prismjs-copy="Copy this code snippet" class="language-cpp">
+void UProGenMeshBase::UpdateMesh(int SidesOnShape, UStaticMesh* ColliderMesh)
+{
 
+  if (SidesOnShape <= 2)
+  {
+    UE_LOG(LogTemp, Display, TEXT("Shape is 2 or less sides, will crash program!"));
+    return;
+  }
+
+  //Clearing the fields to allow for new Shapes to be created
+  Triangles.Empty();
+  Verticies.Empty();
+  VertexColliders.Empty();
+  Normals.Empty();
+  UV0.Empty();
+  Tangents.Empty();
+  VertexColours.Empty();
+  OnWallHit.Empty();
+
+  //Setting all the Verticies in the shape and equating them to a circle
+  float Angle = 360.f / SidesOnShape;
+
+  for (size_t CurrentSide = 0; CurrentSide < SidesOnShape; CurrentSide++)
+  {
+    //Verticies
+    float CurAngle = FMath::FMath::DegreesToRadians(Angle * CurrentSide); //Change to Radians since Sin and Cos use Radians and not Degrees
+    float X = FMath::Sin(CurAngle);
+    float Y = FMath::Cos(CurAngle);
+    Verticies.Add(FVector(X, 0.f, Y));
+
+    //Setting the collider for the vertex
+    FString CurrentColliderName = FString::Format(TEXT("Collider For Vertex {0}"), TArray<FStringFormatArg>{CurrentSide});
+    UStaticVertexCollider* CurrentCollider = NewObject<UStaticVertexCollider>(this->GetOwner(), (FName)CurrentColliderName);
+    CurrentCollider->SetMaterial(0, VertexColliderMaterial);
+
+    //Attaching Collider
+    CurrentCollider->AttachToComponent(this, FAttachmentTransformRules::SnapToTargetNotIncludingScale);
+    CurrentCollider->RegisterComponent();
+
+    //Setting World Transform
+    FTransform ColliderTransform = FTransform(FRotator(0.f, 0.f, -90.f), this->GetComponentLocation() + FVector(X, 0.f, Y), VertexColliderScale);
+    CurrentCollider->SetWorldTransform(ColliderTransform);
+
+    //Setting Mesh and Vertex Number
+    CurrentCollider->SetStaticMesh(ColliderMesh);
+    CurrentCollider->VertexNo = CurrentSide;
+
+    VertexColliders.Add(CurrentCollider);
+
+    if (bCanSendRay)
+    {
+      //Spawning the Collider which will be shown on the wall mesh
+      CurrentColliderName = FString::Format(TEXT("Visual For Current Vertex {0}"), TArray<FStringFormatArg>{CurrentSide});
+      UStaticMeshComponent* MeshShown = NewObject<UStaticMeshComponent>(this->GetOwner(), (FName)CurrentColliderName);
+
+      //Attaching Collider
+      MeshShown->AttachToComponent(this, FAttachmentTransformRules::SnapToTargetNotIncludingScale);
+      MeshShown->RegisterComponent();
+
+      //Setting World Transform
+      ColliderTransform = FTransform(FRotator(0.f, 0.f, -90.f), this->GetComponentLocation(), ShownColliderScale);
+      MeshShown->SetWorldTransform(ColliderTransform);
+
+      //Setting the mesh for this and the material
+      MeshShown->SetStaticMesh(ShownColliderMesh);
+      MeshShown->SetMaterial(0, ShownColliderMaterial);
+
+      OnWallHit.Add(MeshShown);
+    }
+    //Normals
+    Normals.Add(FVector(1.f, 0.f, 0.f));
+    //UV0
+    UV0.Add(FVector2D(X, Y));
+    //Tangents
+    Tangents.Add(FProcMeshTangent(0.f, 1.f, 0.f));
+    //Linear Colour
+    VertexColours.Add(FLinearColor(.75f, .75f, .675f, 1.f));
+  }
+  //Setting all the Triangles
+  //Minus the two since we only need Sides - 2 Tries, will cause IndexOutOfArray crashes
+  for (size_t CurrentTri = 0; CurrentTri < SidesOnShape - 2; CurrentTri++)
+  {
+    Triangles.Add(0);
+    Triangles.Add(CurrentTri + 1);
+    Triangles.Add(CurrentTri + 2);
+  }
+  CreateMesh();
+}
       </code>
-
-      <p>
-          Triangles were simple enough with a for loop iterating adding the first vertex then the CurrentTri + 1 and CurrentTri + 2 (Code)
-      </p>
-
-      <code data-prismjs-copy="Copy this code snippet" class="language-cpp">
-
-      </code>
-        <p>
-          There is no need for special code for texture generation since there is only simple shapes being constructed.
-        </p>
-
-        <code data-prismjs-copy="Copy this code snippet" class="language-cpp">
-
-        </code>  
-    </div>
-
-
-  </div>
 
 </body>
 
