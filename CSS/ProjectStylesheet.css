@@ -43,12 +43,29 @@ p {
 img {
   max-width:50%;
   margin:auto;
+  margin-bottom:1rem;
 }
 video {
   display:block;
   margin:0 auto;
 }
-
+table {
+	margin: auto;
+	text-align: center;
+  margin-bottom:1rem;
+}
+table th {
+	border: 1px solid rgba(1,1,1,0.4);
+	text-align: center;
+  padding: 1rem;
+}
+table tr {
+	border: 1px solid rgba(1,1,1,0.4);
+}
+table td {
+	border: 1px solid rgba(1,1,1,0.4);
+	padding: 1rem;
+}
 /*Project Title and Description*/
 .projectDiv {
   display: flex;
@@ -59,6 +76,22 @@ video {
   height:0;
 }
 
+/*List of Contents*/
+.list {
+  display: flex;
+  flex-direction: row;
+}
+.list ul {
+  flex-wrap: wrap;
+  margin: 0 10vw;
+}
+.list ul li {
+  text-align: center;
+  margin: 1rem auto;
+  flex: 0 0 30%;
+  border: 1px solid rgba(1,1,1,0.4);
+  cursor: pointer;
+}
 /*Side by Side view*/
 .sidebyside {
   display:flex;
@@ -83,7 +116,27 @@ code {
 .imgCaption {
   font-size: 1.25rem;
 }
-
+/**/
+.normalList {
+}
+.normalList ul {
+	display: block;
+	margin: auto;
+	margin-bottom: 1rem;
+	max-width: 30vw;
+}
+.normalList ul li {
+	border: 0;
+	list-style: inside;
+	color: #ccc;
+}
+.normallist ul li ul{
+  margin:0 !important;
+}
+.normalList ul li ul li {
+	margin: 0 3vw;
+	padding: 0.5rem 0;
+}
 @media screen and (max-width: 600px) {
   .carousel-caption {
     position: sticky;

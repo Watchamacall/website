@@ -11,6 +11,9 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">  
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <!---Prism---->
+  <script src="JavaScript/prism.js"></script>
+  <link rel="stylesheet" href="CSS/prism.css">
   <!--Custom-->
   <link rel="stylesheet" href="CSS/stylesheet.css">
   <script src="JavaScript/scripts.js"></script>
@@ -24,7 +27,6 @@
     <a href="MindSlayer.html">MindSlayer</a>
     <a href="#" class="active">Hole In The Wall</a>
     <a href="DreamCollection.html">Dream Collection</a>
-    <a href="#about">Resume</a>
     <a href="javascript:void(0);" class="icon" onclick="NavbarOpen()">
       <i class="fa fa-bars"></i>
     </a>
@@ -38,20 +40,38 @@
         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
         <li data-target="#myCarousel" data-slide-to="1"></li>
         <li data-target="#myCarousel" data-slide-to="2"></li>
-        <li data-target="#myCarousel" data-slide-to="3"></li>
       </ol>
 
       <!-- Wrapper for slides -->
       <div class="carousel-inner" role="listbox">
 
         <div class="item active">
-          <img src="MindSlayer_files/MindSlayerImage.png" alt="Chania" width="460" height="345">
+          <video autoplay loop controls>
+            <source src="images/SFAS2023/FirstLevel.mp4" type="video/mp4">
+          </video>
           <div class="carousel-caption">
-            <h3>MindSlayer Logo</h3>
-            <p>The base concept art which is shows the theme of the game</p>
+            <h3>First Level of the game</h3>
+            <p>Showing the first level of the game</p>
           </div>
         </div>
-
+        <div class="item">
+          <video autoplay loop controls>
+            <source src="images/SFAS2023/FourToFiveSides.mp4" type="video/mp4">
+          </video>
+          <div class="carousel-caption">
+            <h3>Changing Sides</h3>
+            <p>Going from 4 sides to 5 sides on an object</p>
+          </div>
+        </div>
+        <div class="item">
+          <video autoplay loop controls>
+            <source src="images/SFAS2023/FinalLevelWithWinScreen.mp4" type="video/mp4">
+          </video>
+          <div class="carousel-caption">
+            <h3>Win Screen</h3>
+            <p>Completing the final level to the win screen</p>
+          </div>
+        </div>
         <!-- <div class="item">
                   <img src="./Images/MindSlayer/MindSlayerImage.png" alt="Chania" width="460" height="345">
                   <div class="carousel-caption">
@@ -172,7 +192,7 @@ void ASTBPlayerController::SetupScreen()
       </div>
       <div class="sidebyside">
         <div class="sidebysideElement">
-            <code data-prismjs-copy="Copy this code snippet" class="language-cpp">
+          <code data-prismjs-copy="Copy this code snippet" class="language-cpp">
 STBPlayerController.h
 UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "UI")
   TSubclassOf&#60;UScreen&#62; IntroClass;
@@ -191,7 +211,7 @@ UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "UI")
 
 UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "UI")
   TSubclassOf&#60;UScreen&#62; OutroClass;
-              </code>
+          </code>
         </div>
         <div class="sidebysideElement">
           <code data-prismjs-copy="Copy this code snippet" class="language-cpp">
@@ -275,12 +295,12 @@ void UPlayingScreen::Select_Implementation()
   {
     if(IsValid(PlayerController))
     {
-      const bool bCorrect = PlayerController->TryMove();
+      const bool bCorrect = PlayerController-&#62;TryMove();
       if(!bCorrect)
       {
-        if(const UGameplay* Gameplay = PlayerController->GetGameplay())
+        if(const UGameplay* Gameplay = PlayerController-&#62;GetGameplay())
         {
-          const int Lives = Gameplay->GetLives();
+          const int Lives = Gameplay-&#62;GetLives();
           SetLives(Lives);
         }					
       }
@@ -310,28 +330,28 @@ void UPlayingScreen::Select_Implementation()
       //Since the GuessPosition origin is the center of the screen whilst the Deproject origin is top left, add the Viewport * .5f to center it and get accurate direction
       FVector2D ViewportSizeTotal;
 
-      auto Viewport = GWorld->GetGameViewport();
-      Viewport->GetViewportSize(ViewportSizeTotal);
+      auto Viewport = GWorld-&#62;GetGameViewport();
+      Viewport-&#62;GetViewportSize(ViewportSizeTotal);
 
       FVector2D AccuracyMulti = FVector2D(ViewportSizeTotal.X / 1920.f , ViewportSizeTotal.Y / 1080.f);
 
-      FVector2D GuessPosition = (Cast<UCanvasPanelSlot>(Images[GuessImageIndex]->Slot)->GetPosition()* AccuracyMulti);
+      FVector2D GuessPosition = (Cast&#60;UCanvasPanelSlot&#62;(Images[GuessImageIndex]-&#62;Slot)-&#62;GetPosition()* AccuracyMulti);
         
 
       ViewportSizeTotal *= .5f;
       ViewportSizeTotal = FVector2D(ViewportSizeTotal.X + GuessPosition.X, ViewportSizeTotal.Y + GuessPosition.Y);
 
-      GetWorld()->GetFirstPlayerController()->SetMouseLocation(ViewportSizeTotal.X, ViewportSizeTotal.Y);
+      GetWorld()-&#62;GetFirstPlayerController()-&#62;SetMouseLocation(ViewportSizeTotal.X, ViewportSizeTotal.Y);
 
       FHitResult Hit;
 
       
-      if (PlayerController->GetHitResultAtScreenPosition(ViewportSizeTotal, ECollisionChannel::ECC_WorldDynamic, false, Hit))
+      if (PlayerController-&#62;GetHitResultAtScreenPosition(ViewportSizeTotal, ECollisionChannel::ECC_WorldDynamic, false, Hit))
       {
-        if (UStaticVertexCollider* Collider = Cast<UStaticVertexCollider>(Hit.GetComponent()))
+        if (UStaticVertexCollider* Collider = Cast&#60;UStaticVertexCollider&#62;(Hit.GetComponent()))
         {
-          PlayerController->SetSelectedVertex(Collider->VertexNo);
-          Images[GuessImageIndex]->SetBrushTintColor(SelectedColor);
+          PlayerController-&#62;SetSelectedVertex(Collider-&#62;VertexNo);
+          Images[GuessImageIndex]-&#62;SetBrushTintColor(SelectedColor);
         }
       }
     }
@@ -356,11 +376,12 @@ void UPlayingScreen::Select_Implementation()
         <br>
         The code below is the UpdateMesh function
       </p>
+
       <code data-prismjs-copy="Copy this code snippet" class="language-cpp">
 void UProGenMeshBase::UpdateMesh(int SidesOnShape, UStaticMesh* ColliderMesh)
 {
 
-  if (SidesOnShape <= 2)
+  if (SidesOnShape &#60;= 2)
   {
     UE_LOG(LogTemp, Display, TEXT("Shape is 2 or less sides, will crash program!"));
     return;
@@ -379,7 +400,7 @@ void UProGenMeshBase::UpdateMesh(int SidesOnShape, UStaticMesh* ColliderMesh)
   //Setting all the Verticies in the shape and equating them to a circle
   float Angle = 360.f / SidesOnShape;
 
-  for (size_t CurrentSide = 0; CurrentSide < SidesOnShape; CurrentSide++)
+  for (size_t CurrentSide = 0; CurrentSide &#60; SidesOnShape; CurrentSide++)
   {
     //Verticies
     float CurAngle = FMath::FMath::DegreesToRadians(Angle * CurrentSide); //Change to Radians since Sin and Cos use Radians and not Degrees
@@ -388,41 +409,41 @@ void UProGenMeshBase::UpdateMesh(int SidesOnShape, UStaticMesh* ColliderMesh)
     Verticies.Add(FVector(X, 0.f, Y));
 
     //Setting the collider for the vertex
-    FString CurrentColliderName = FString::Format(TEXT("Collider For Vertex {0}"), TArray<FStringFormatArg>{CurrentSide});
-    UStaticVertexCollider* CurrentCollider = NewObject<UStaticVertexCollider>(this->GetOwner(), (FName)CurrentColliderName);
-    CurrentCollider->SetMaterial(0, VertexColliderMaterial);
+    FString CurrentColliderName = FString::Format(TEXT("Collider For Vertex {0}"), TArray&#60;FStringFormatArg&#62;{CurrentSide});
+    UStaticVertexCollider* CurrentCollider = NewObject&#60;UStaticVertexCollider&#62;(this-&#62;GetOwner(), (FName)CurrentColliderName);
+    CurrentCollider-&#62;SetMaterial(0, VertexColliderMaterial);
 
     //Attaching Collider
-    CurrentCollider->AttachToComponent(this, FAttachmentTransformRules::SnapToTargetNotIncludingScale);
-    CurrentCollider->RegisterComponent();
+    CurrentCollider-&#62;AttachToComponent(this, FAttachmentTransformRules::SnapToTargetNotIncludingScale);
+    CurrentCollider-&#62;RegisterComponent();
 
     //Setting World Transform
-    FTransform ColliderTransform = FTransform(FRotator(0.f, 0.f, -90.f), this->GetComponentLocation() + FVector(X, 0.f, Y), VertexColliderScale);
-    CurrentCollider->SetWorldTransform(ColliderTransform);
+    FTransform ColliderTransform = FTransform(FRotator(0.f, 0.f, -90.f), this-&#62;GetComponentLocation() + FVector(X, 0.f, Y), VertexColliderScale);
+    CurrentCollider-&#62;SetWorldTransform(ColliderTransform);
 
     //Setting Mesh and Vertex Number
-    CurrentCollider->SetStaticMesh(ColliderMesh);
-    CurrentCollider->VertexNo = CurrentSide;
+    CurrentCollider-&#62;SetStaticMesh(ColliderMesh);
+    CurrentCollider-&#62;VertexNo = CurrentSide;
 
     VertexColliders.Add(CurrentCollider);
 
     if (bCanSendRay)
     {
       //Spawning the Collider which will be shown on the wall mesh
-      CurrentColliderName = FString::Format(TEXT("Visual For Current Vertex {0}"), TArray<FStringFormatArg>{CurrentSide});
-      UStaticMeshComponent* MeshShown = NewObject<UStaticMeshComponent>(this->GetOwner(), (FName)CurrentColliderName);
+      CurrentColliderName = FString::Format(TEXT("Visual For Current Vertex {0}"), TArray&#60;FStringFormatArg&#62;{CurrentSide});
+      UStaticMeshComponent* MeshShown = NewObject&#60;&#60;&#60;UStaticMeshComponent&#62;(this-&#62;GetOwner(), (FName)CurrentColliderName);
 
       //Attaching Collider
-      MeshShown->AttachToComponent(this, FAttachmentTransformRules::SnapToTargetNotIncludingScale);
-      MeshShown->RegisterComponent();
+      MeshShown-&#62;AttachToComponent(this, FAttachmentTransformRules::SnapToTargetNotIncludingScale);
+      MeshShown-&#62;RegisterComponent();
 
       //Setting World Transform
-      ColliderTransform = FTransform(FRotator(0.f, 0.f, -90.f), this->GetComponentLocation(), ShownColliderScale);
-      MeshShown->SetWorldTransform(ColliderTransform);
+      ColliderTransform = FTransform(FRotator(0.f, 0.f, -90.f), this-&#62;GetComponentLocation(), ShownColliderScale);
+      MeshShown-&#62;SetWorldTransform(ColliderTransform);
 
       //Setting the mesh for this and the material
-      MeshShown->SetStaticMesh(ShownColliderMesh);
-      MeshShown->SetMaterial(0, ShownColliderMaterial);
+      MeshShown-&#62;SetStaticMesh(ShownColliderMesh);
+      MeshShown-&#62;SetMaterial(0, ShownColliderMaterial);
 
       OnWallHit.Add(MeshShown);
     }
@@ -437,7 +458,7 @@ void UProGenMeshBase::UpdateMesh(int SidesOnShape, UStaticMesh* ColliderMesh)
   }
   //Setting all the Triangles
   //Minus the two since we only need Sides - 2 Tries, will cause IndexOutOfArray crashes
-  for (size_t CurrentTri = 0; CurrentTri < SidesOnShape - 2; CurrentTri++)
+  for (size_t CurrentTri = 0; CurrentTri &#60; SidesOnShape - 2; CurrentTri++)
   {
     Triangles.Add(0);
     Triangles.Add(CurrentTri + 1);

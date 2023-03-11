@@ -28,7 +28,6 @@
     <a href="#" class="active">MindSlayer</a>
     <a href="SFAS2023.html">Hole In The Wall</a>
     <a href="DreamCollection.html">Dream Collection</a>
-    <a href="#about">Resume</a>
     <a href="javascript:void(0);" class="icon" onclick="NavbarOpen()">
       <i class="fa fa-bars"></i>
     </a>
@@ -43,6 +42,8 @@
         <li data-target="#myCarousel" data-slide-to="1"></li>
         <li data-target="#myCarousel" data-slide-to="2"></li>
         <li data-target="#myCarousel" data-slide-to="3"></li>
+        <li data-target="#myCarousel" data-slide-to="4"></li>
+        <li data-target="#myCarousel" data-slide-to="5"></li>
       </ol>
 
       <!-- Wrapper for slides -->
@@ -56,6 +57,57 @@
           </div>
         </div>
 
+        <div class="item">
+          <video autoplay loop controls>
+            <source src="images/MindSlayer/CastleFirstLook.mp4" type="video/mp4">
+          </video>
+          <div class="carousel-caption">
+            <h3>Castle</h3>
+            <p>The first look the player gets of the Castle</p>
+          </div>
+        </div>
+
+        <div class="item">
+          <video autoplay loop controls>
+            <source src="images/MindSlayer/CastleSecondLook.mp4" type="video/mp4">
+          </video>
+          <div class="carousel-caption">
+            <h3>Castle 2nd Look</h3>
+            <p>Looking at the Castle from another point of the map</p>
+          </div>
+        </div>
+        
+        <div class="item">
+          <video autoplay loop controls>
+            <source src="images/MindSlayer/RunThenClimb.mp4" type="video/mp4">
+          </video>
+          <div class="carousel-caption">
+            <h3>Parkour Run and Climb</h3>
+            <p>The Parkour Run and Climb</p>
+          </div>
+        </div>
+
+        <div class="item">
+          <video autoplay loop controls>
+            <source src="images/MindSlayer/ComboRun.mp4" type="video/mp4">
+          </video>
+          <div class="carousel-caption">
+            <h3>Parkour Running</h3>
+            <p>Showing off Wall Running in a combo</p>
+          </div>
+        </div>
+
+        <div class="item">
+          <video autoplay loop controls>
+            <source src="images/MindSlayer/KnifeDistraction.mp4" type="video/mp4">
+          </video>
+          <div class="carousel-caption">
+            <h3>Distraction</h3>
+            <p>Guard being distracted using the Flying Knife</p>
+          </div>
+        </div>
+
+        
         <!-- <div class="item">
                   <img src="./Images/MindSlayer/MindSlayerImage.png" alt="Chania" width="460" height="345">
                   <div class="carousel-caption">
@@ -97,20 +149,30 @@
   <div class="projectDiv">
     <h1>MindSlayer</h1>
     <p>
-      MindSlayer is a First Person, Stealth, Parkour game created by Bone Fuel Studios as part of my Final Year at University. The team consisted of 6 Artists, 2 Designers, 1 Animator and 1 Programmer plus 1 Freelance Programmer.
+      MindSlayer is a First Person, Stealth, Parkour game created by Bone Fuel Studios as part of the final year at University.<br>The team consisted of 6 Artists, 2 Designers, 1 Animator and 1 Programmer plus 1 Freelance Programmer.
     </p>
   </div>
   <div class="projectDiv">
-    <h3>My Role in MindSlayer</h3>
+    <h3>Role Played</h3>
     <p>
-      My role within the development of MindSlayer was being the primary Gameplay Programmer. I was in charge of creating the <a href="#playerMovement">Player Movement</a>; <a href="#ai">AI</a>; <a href="#uiManager">UI Backend</a>; <a href="#feedback">In-Game Feedback System</a>.
+      The role that I took within the Development of MindSlayer was the Primary Gameplay Programmer. With this role, I created:
     </p>
+    <div class="list">
+      <ul>
+        <li onclick="document.location.href='#playerMovement'">Player Movement</li>
+        <li onclick="document.location.href='#ai'">AI</li>
+        <li onclick="document.location.href='#uiManager'">UI Backend</li>
+        <li onclick="document.location.href='#flyingKnife'">Porting Flying Knife</li>
+        <li onclick="document.location.href='#feedback'">In-Game Feedback System</li>
+      </ul>
+    </div>
 
     <h3>C++ and Blueprints</h3>
-    <p>When it came to developing the game, I used both C++ and Blueprints. All logic was created in C++ with events being exposed to Blueprints to allow for Developers who are not code savvy to add things like sound</p>
-
+    <p>
+      This project uses a Hybrid approach of using both C++ and Blueprints in the creation of Mechanics.<br>This approach was chosen to Developers could use the Blueprints created from the C++ classes to add anything that they might need such as sounds. This has allowed for Developers to rely less on me for implementing such things.
+    </p>
   </div>
-  <div id="playerMovement"class="projectDiv">
+  <div id="playerMovement" class="projectDiv">
     <h2>Player Movement</h2>
     <p>The Player Movement handles moving the Player around the world and holds all the components that the player can
       utilise, UParkourMovementComponent and UUIManagerComponent.</p>
@@ -118,60 +180,122 @@
   </div>
   <div class="projectDiv">
     <h3>Parkour System</h3>
-    <p>The Parkour System was one of the main mechanics of MindSlayer so it needed a lot of work done to it. The
-      component itself was inherited from the <a href="#" style="">UCharacterMovementComponent</a> class in Unreal and
-      was called UParkourMovementComponent. This component was expanded to allow for the extra options of the Movement
-      System to be implemented like: Wall Run; Wall Climb. All of this code was created purely in C++ and was then
-      attached onto the UMyParkourCharacter class since it was a component attached to the main <a href="#">Actor</a>
+    <p>
+      The parkour is an enhanced version of <a href=”https://docs.unrealengine.com/5.1/en-US/API/Runtime/Engine/GameFramework/UCharacterMovementComponent”>UCharacterMovementComponent</a> and is changed to allow for Custom Movement by overriding <a href=”https://docs.unrealengine.com/4.27/en-US/API/Runtime/Engine/GameFramework/UCharacterMovementComponent/PhysCustom”>PhysCustom</a> including custom functions such as, Wall Run and Wall Climb.
     </p>
 
   </div>
+
+  <div class="projectDiv">
+    <h3>Development History</h3>
+  </div>
+
   <div class="sidebyside">
     <div class="sidebysideElement">
       <h3>Prototyping</h3>
-      <p>The Parkour System was one of the main mechanics of MindSlayer so it needed a lot of work done to it. The
-        component itself was inherited from the <a href="#">UCharacterMovementComponent</a>. When prototyping this
-        mechanic, there were 4 <a href="#">Line Casts</a> sent out, 2 facing forwards, 1 facing right, 1 facing left,
-        and each related to a means of activating a movement option.</p>
+      <p>The prototype for the Parkour mechanics used multiple <a href=”https://docs.unrealengine.com/5.0/en-US/API/Runtime/Engine/Engine/UWorld/LineTraceSingleByChannel/”>Line Casts</a> to decide whether or not to start, complete or continue the particular part.</p>
 
-      <img src="Images/MindSlayer/PrototypeParkourSystem.png">
-      <p class="imgCaption">Showing where the line casts were on the prototype system</p>
+      <div class="projectDiv">
+        <img src="Images/MindSlayer/PrototypeParkourSystem.png">
+        <p class="imgCaption">Showing where the line casts were on the prototype system</p>
+        <p>
+          The image above shows the cubes used for these Line Casts and what they were used to check. This method had the issue of being troublesome for many reasons such as, finding out when to stop climbing for either the angle being too extreme or being at the top of the climb. 
+        </p>
+      </div>
     </div>
     <div class="sidebysideElement">
       <h3>Developing</h3>
-      <p>A bit into development, this had to be changed since it was very awkward to know when someone was Wall Climbing
-        and moving the camera, causing many bugs. The system was overhauled to use a <a href="#">Sweep Cast</a> to tell
-        when the player was against a wall.</p>
+      <p>
+        The final development for the Parkour Mechanic used a <a href="https://docs.unrealengine.com/4.27/en-US/API/Runtime/Engine/Engine/UWorld/SweepSingleByChannel/">Sweep Cast</a> based on the player’s Capsule Collider. It takes advantage of <a href="https://docs.unrealengine.com/5.1/en-US/API/Runtime/Engine/GameFramework/UCharacterMovementComponent/UpdateCharacterS-/">UpdateCharacterStateBeforeMovement</a> to change to Wall Climb or Run when needed.<br>The code below shows the function implemented.
+      </p>
 
       <code data-prismjs-copy="Copy this code snippet" class="language-cpp">
-FVector pawnForwardVector = GetCharacterOwner()-&gt;GetActorForwardVector().GetSafeNormal();
+void UParkourMovementComponent::UpdateCharacterStateBeforeMovement(float deltaSeconds)
+{
+  FVector CurrentLocation = GetActorLocation();
 
-float angle = 180 - DegreesFromVectors(hit.ImpactNormal, pawnForwardVector); //Angle we are facing wall (180 is facing wall directly so minus 180 at the start to make it the actual angle)
+  FVector SweepLength = (Velocity.GetSafeNormal() * 2.f);
+  ECollisionChannel CollisionChannel = UpdatedComponent-&#62;GetCollisionObjectType(); //Make Capsule
+  FCollisionShape CapsuleShape = GetPawnCapsuleCollisionShape(SHRINK_RadiusCustom, -CapsuleRadius); //Emlarge the capsule by the -CapsuleRadius, if not negative actually shrinks
+  CapsuleShape.Capsule.HalfHeight += CapsuleHeight;
 
-	//UE_LOG(LogTemp, Display, TEXT("impactNormal is: %s"), *hit.ImpactNormal.ToString()); //DEBUG
+  if (ShowCapsule) //DEBUG
+  {
+    DrawDebugCapsule(GetWorld(), GetActorLocation(), CapsuleShape.Capsule.HalfHeight, CapsuleShape.Capsule.Radius, FQuat::Identity, FColor::Red);
+  }
 
+  //Checking for a hit on the object
+  if (GetWorld()-&#62;SweepSingleByChannel(SweepHit, CurrentLocation, CurrentLocation + SweepLength, FQuat::Identity, CollisionChannel, CapsuleShape, QueryParams))
+  {
+    //Angle the player is facing against the hit object
+    float PlayerAngleToObject = NegateInitalAngle - DegreesFromVectors(SweepHit.ImpactNormal, GetCharacterOwner()-&#62;GetActorForwardVector().GetSafeNormal());
 
+    if (Velocity.Z &#62; 0) //Moving upwards
+    {
+      //Successful if the Actor has the correct Tags
+      if (SweepHit.GetActor()-&#62;ActorHasTag(ParkourTagName) || SweepHit.GetComponent()-&#62;ComponentHasTag(ParkourTagName))
+      {
+        if (PlayerAngleToObject &#60; MaxDegreeToClimb) //Angle of player is within climbing range
+        {
+          if (CustomMovementMode == MOVE_WallClimb || SweepHit.GetComponent() == ClimbHitComponent) //Returning since we are already climbing, don't want to activate again if we're still on the wall. Will cause many Start and End events otherwise
+          {
+            return;
+          }
+          ClimbHitComponent = SweepHit.GetComponent();
+          StartWallClimbing();
+        }
+        else if (PlayerAngleToObject &#60; (NegateRunAngle + MaxDegreeToRun) && PlayerAngleToObject &#62; (NegateRunAngle - MaxDegreeToRun)) //Angle of player is within both positive DegreeToRun and negative DegreeToRun since can look left and right
+        {
+          if (CustomMovementMode == MOVE_WallRun || SweepHit.GetComponent() == RunHitComponent) //Returning since we are already Running, don't want to activate again if we're still on the wall. Will cause many Start and End events otherwise
+          {
+            return;
+          }
+          RunHitComponent = SweepHit.GetComponent();
+          StartWallRunning();
+        }
+      }
+    }
+    else
+    { 
+      if (MovementMode == MOVE_Custom)
+      {
+        //UE_LOG(LogTemp, Display, TEXT("Velocity is not greater than 0, cancelling out of Parkour Mode"));
+      }
+      //We're hitting an object but our velocity is 0 or lower
+      if (PlayerAngleToObject &#62; MaxDegreeToClimb && bIsWallClimbing)
+      {
+        StopWallClimbing();
+      }
+      else if (PlayerAngleToObject &#62; (NegateRunAngle + MaxDegreeToRun) && bIsWallRunning || PlayerAngleToObject &#60; (NegateRunAngle - MaxDegreeToRun) && bIsWallRunning)
+      {
+        StopWallRunning();
+      }
+    }
+  }
+  else if (MovementMode == MOVE_Custom) //If we're not hitting an object
+  {
+    switch (CustomMovementMode)
+    {
+    case MOVE_WallClimb:
+      StopWallClimbing();
+      break;
+    case MOVE_WallRun:
+      StopWallRunning();
+      break;
+    default:
+      break;
+    }
+  }
+  //Normal movement if we are not dealing with 
+  Super::UpdateCharacterStateBeforeMovement(deltaSeconds);
+}      
+      </code>
 
-	//Wall Climbing is between 0 and maxAngleToClimbOn
-	if (angle &lt; maxAngleToClimbOn &amp;&amp; !bIsWallRunning)
-	{
-			...
-	}
-	//Wall Running is between 90 to maxAngleToRunOn and 90 to -maxAngleToRunOn
-	else if (angle &lt; 90 + maxAngleToRunOn &amp;&amp; angle &gt; 90 - maxAngleToRunOn &amp;&amp; !bIsWallClimbing &amp;&amp; Velocity.Size() &gt; minParkourSpeed)
-	{
-				...
-	}
-</code>
-      <p>The code snippet above shows how I get the angle and how it is used to decide whether the player is looking to
-        Wall Climb or Wall Run</p>
+      <p>
+        The function changes to PhysWallClimb or PhysWallRun which can be seen below with their implementation.
+      </p>
     </div>
-
-
   </div>
-
-
-
 
   <div class="projectDiv">
     <h3>Parkour Specifiers</h3>
@@ -181,80 +305,348 @@ float angle = 180 - DegreesFromVectors(hit.ImpactNormal, pawnForwardVector); //A
       <div class="sidebysideElement">
         <h3>Wall Climb</h3>
         <p>
-          Wall Climb was one of the two primary movement options added to this class, it allows for the player to move vertically up a wall.
+          Wall Climb is one the Custom Movement Options created in order to make the Parkour Mechanic. This mechanic consists of:
+        </p>
+
+        <div class="projectDiv normalList">
+          <ul>
+            <li>
+              Getting the Up Vector to move the player up (If a wall is at an angle then it could cause for the capsule to bug out)
+            </li>
+            <li>
+              Slow down the Z Velocity by a set amount until it reaches zero
+              <ul>
+                <li>
+                  If it reaches zero then Wall Climbing stops
+                </li>
+
+                <li>
+                  Otherwise it applies it to the MovementVelocity Z
+                </li>
+              </ul>
+            </li>
+            <li>
+              Change the X and Y Velocity to 0 in order to move straight up on the wall
+            </li>
+          </ul>
+        </div>
+        <p>
+          The code below shows the bullet points above in action.
         </p>
 
         <code class="language-cpp">
-if (deltaTime &lt; MIN_TICK_TIME)
+void UParkourMovementComponent::PhysWallClimb(float deltaTime, int32 Iterations)
 {
-	return;
+  if (deltaTime &#60; MIN_TICK_TIME)
+  {
+    return;
+  }
+  bIsWallClimbing = true; //Make sure that we check that we are in fact climbing
+
+  FVector AxisY = SweepHit.ImpactNormal; //Right Vector
+  FVector AxisZ = FVector::UpVector; //Up Vector
+  FVector AxisX = FVector::CrossProduct(AxisY, AxisZ); //Forward Vector
+
+  AxisZ = FVector::CrossProduct(AxisX, AxisY); //Actual Up Vector 
+
+  float RotationAngle = DegreesFromVectors(GetOwner()-&#62;GetActorForwardVector().GetSafeNormal(), AxisZ);
+
+  //SetCapsuleRotation(FRotator(0, RotationAngle * -1, 0)); //Setting Capsule Rotation based on the actual Z axis of the wall
+  FVector MovementVelocity = Velocity;
+
+  //Slow down the Z Velocity by WallSlowdown
+  StartZVelocity = StartZVelocity - (WallSlowdown * deltaTime);
+  //Clamp in case it goes below zero
+  StartZVelocity = FMath::Clamp(StartZVelocity, 0, StartZVelocity);
+
+  if (Velocity.Z &#60;= 0)
+  {
+    StopWallClimbing();
+  }
+  else
+  {
+    MovementVelocity.Z = StartZVelocity;
+  }
+
+  //Change the Forward and Right vectors to be zero, otherwise can move backwards and cancel out, makes it a straight up movement
+  MovementVelocity.X = 0.f;
+  MovementVelocity.Y = 0.f;
+  Velocity = MovementVelocity; //Placing MovementVelocity back into Velocity for Phys Calculations
+
+  MoveUpdatedComponent(MovementVelocity * deltaTime, GetCharacterOwner()-&#62;GetActorRotation(), true, nullptr, ETeleportType::None); //Actually moving across MovementVelocity
 }
-bIsWallClimbing = true; //Make sure that we check that we are in fact climbing
-
-//UE_LOG(LogTemp, Display, TEXT("Vector is: %s"), *GetBestDirectionOffActor(hit.GetActor()).ToString() );
-
-FVector yAxis = hit.ImpactNormal; //This is the downwards angle of the wall
-FVector xAxis = FVector::CrossProduct(hit.ImpactNormal, FVector::UpVector); //The local Right vector based on a directly up Z Axis
-FVector zAxis = FVector::CrossProduct(xAxis, yAxis); // Finding the actual Z Axis based on the Y and X, make sure it's the right way up otherwise goes down instead of up
-FVector initialLocation = GetCharacterOwner()-&gt;GetActorLocation();
-	
-float angle = DegreesFromVectors(GetCharacterOwner()-&gt;GetActorForwardVector().GetSafeNormal(), zAxis);
-
-if (startClimb)
-{
-  SetCapsuleRotation(FRotator(0, angle * -1, 0)); //Negative one to make it rotate in the correct direction
-}
-
-FVector movementVelocity = climbSpeed * zAxis;
-
-MoveUpdatedComponent(movementVelocity * deltaTime, GetCharacterOwner()-&gt;GetActorRotation(), true, nullptr, ETeleportType::None);
-
-FVector newLocation = GetCharacterOwner()-&gt;GetActorLocation();
-time += FVector::Dist(initialLocation, newLocation);
-
         </code>
-
-        <p>
-          The code snippet above shows how I handled the physics for Wall Climbing.
-        </p>
       </div>
       <div class="sidebysideElement">
         <h3>Wall Run</h3>
         <p>
-          Wall Run was one of the two primary movement options added to this class, it allows for a player to move along
-          a wall horizontally.
+          Wall Run is another one of the Custom Movement Options created for the Parkour. The mechanic has been compiled within the PhysWallRun function below.<br>
+          Wall Run is another Custom Movement Options created for the Parkour Mechanic. This mechanic boils down to:
+        </p>
+        <div class="projectDiv normalList">
+          <ul>
+            <li>
+              Get the Forward Vector to move the player forward
+            </li>
+            <li>
+              Check what direction the player is moving forwards and invert the Forward Vector if the player is moving opposite of the Forward Vector
+            </li>
+            <li>
+              Set Camera Rotation based on that Forward Vector
+            </li>
+            <li>
+              Get the Multiplier for either the X or Y axis
+            </li>
+            <li>
+              Slow down the Player based on the GroundFriction
+            </li>
+            <li>
+              Move the Player on the X and Y axis Linearly
+            </li>
+            <li>
+              Reduce the Z Velocity until it reaches 0
+            </li>
+          </ul>
+        </div>
+        <p>
+          The code below shows the bullet points above in action
         </p>
         <code class="language-cpp">
-//TODO: Code here
+void UParkourMovementComponent::PhysWallRun(float deltaTime, int32 Iterations)
+{
+	if (deltaTime &#60; MIN_TICK_TIME)
+	{
+		return;
+	}
+	bIsWallRunning = true;
+
+	FVector AxisZ = FVector::UpVector; //Up Vector
+	FVector AxisY = SweepHit.ImpactNormal; //Right Vector (Facing Wall)
+	FVector AxisX = FVector::CrossProduct(AxisZ, AxisY); //Forward Vector
+
+	//TODO: Change MoveDirection to use LineCast forward with Pythagorus to determine the Wall Run Direction
+	float MoveDirection = FVector::DotProduct(AxisX, Velocity.GetSafeNormal()); //Whether or not moving in direction of the wall
+
+	if (MoveDirection &#60;= 0) 
+	{
+		SetCameraRotation(RunCameraAngle);
+		AxisX *= -1;
+	}
+	else
+	{
+		SetCameraRotation(RunCameraAngle * -1);
+	}
+
+	FVector MinSpeed = AxisX * RunSpeed; 
+	float Multiplier;
+
+	/*
+	* m=x/y gives y=xm 
+	* m=y/x gives x=ym
+	*/
 
 
+	if (MinSpeed.X == 0)
+	{
+		Multiplier = MinSpeed.X / MinSpeed.Y;
+	}
+	else
+	{
+		Multiplier = MinSpeed.Y / MinSpeed.X;
+	}
+	
+	FVector MovementVelocity = Velocity - ((AxisX * GroundFriction) * deltaTime);
+
+	if (MinSpeed.X == 0) //Moving on the Y axis only
+	{
+		MinSpeed.Y &#62; 0 ? MovementVelocity.Y = FMath::Clamp(MovementVelocity.Y, MinSpeed.Y, MovementVelocity.Y) : MovementVelocity.Y = MinSpeed.Y;
+
+		MinSpeed.X &#62; 0 ? MovementVelocity.X = MovementVelocity.Y * Multiplier : MovementVelocity.X = MinSpeed.X;
+	}
+	else //Moving on X Axis only or both
+	{
+		MinSpeed.X &#62; 0 ? MovementVelocity.X = FMath::Clamp(MovementVelocity.X, MinSpeed.X, MovementVelocity.X) : MovementVelocity.X = MinSpeed.X;
+
+		MinSpeed.Y &#62; 0 ? MovementVelocity.Y = MovementVelocity.X * Multiplier : MovementVelocity.Y = MinSpeed.Y;
+	}
+
+	StartZVelocity = StartZVelocity + (GetGravityZ() * deltaTime); //Slow Z Velocity until it is zero
+	StartZVelocity = FMath::Clamp(StartZVelocity, 0, StartZVelocity);
+	MovementVelocity.Z = StartZVelocity;
+
+	Velocity = MovementVelocity; //Set Velocity to be MovementVelocity
+
+	time += deltaTime;
+
+	MoveUpdatedComponent(MovementVelocity * deltaTime, GetCharacterOwner()-&#62;GetActorRotation(), true, nullptr, ETeleportType::None); //Actual Movement
+}
           </code>
-        <p>
-          The code snippet above shows how I handled the physics for Wall Running.
-        </p>
+      </div>
+    </div>
+  </div>
+  <div class="projectDiv">
+    <h2>Events</h2>
+    <p>
+      There are several events within the Player Controller that allows for Developers to add nodes in Blueprints based on what the player does.<br>Such examples are the StartWallClimbing; StartWallRunning; StopWallClimbing; StopWallRunning Events found within UParkourMovementComponent. These events are called when their respective name is complete and they call the linked event in ParkourController. The events within C++ are below:
+    </p>
+    <div class="sidebyside">
+
+      <div class="sidebysideElement">
+        <h2>StartWallClimbing</h2>
+        <code class="language-cpp">
+void UParkourMovementComponent::StartWallClimbing()
+{
+  /*Set our components for the first time Wall Climbing*/
+  time = 0;
+  startClimb = true;
+  StartZVelocity = Velocity.Z;
+  WallSlowdown = StartZVelocity / ClimbTime;
+  SetMovementMode(MOVE_WallClimb);
+  GetCharacterOwner()-&#62;OnWallClimbStart();
+}
+        </code>
+      </div>
+      <div class="sidebysideElement">
+        <h2>StartWallRunning</h2>
+        <code class="language-cpp">
+void UParkourMovementComponent::StartWallRunning()
+{
+  /*Setting our components for the first time Wall Running*/
+  time = 0;
+  StartZVelocity = Velocity.Z;
+
+  SetMovementMode(MOVE_WallRun);
+  GetCharacterOwner()-&#62;OnWallRunStart();
+}
+        </code>
+      </div>
+    </div>
+
+    <div class="sidebyside">
+
+      <div class="sidebysideElement">
+        <h2>StopWallClimbing</h2>
+        <code class="language-cpp">
+void UParkourMovementComponent::StopWallClimbing()
+{
+  SetMovementMode(MOVE_Falling);
+  Velocity.Z = 0;
+  bIsWallClimbing = false;
+  SetCapsuleRotation(FRotator());
+  GetCharacterOwner()-&#62;OnWallClimbEnd();
+}
+        </code>
+      </div>
+      <div class="sidebysideElement">
+        <h2>StopWallRunning</h2>
+        <code class="language-cpp">
+void UParkourMovementComponent::StopWallRunning()
+{
+  bIsWallRunning = false;
+    SetMovementMode(MOVE_Falling);
+  SetCameraRotation(FRotator::ZeroRotator);
+  GetCharacterOwner()-&#62;OnWallRunEnd();
+}
+        </code>
       </div>
     </div>
   </div>
 
   <div id="ai" class="projectDiv">
     <h2>AI</h2>
-
+    <p>
+      The AI in MindSlayer uses a Finite State Machine (FSM) system with the nodes being, Patrol; Investigate; Chase; Stun. 
+    </p>
     <div class="sidebyside">
 
       <div class="sidebysideElement">
         <h3>Patrol</h3>
         <p>
-          Patrol is the primary state the AI can go to, this state moves from point to point based on a <a href="#">TArray</a> of <a href="#">Actors</a> placed in the world. If the AI sees a player or hears a distraction, it activates an event to start investigating. During this state, if the AI has lost the player but was chasing them the SeenTime reduces.
+          Patrol is the default state in the FSM and simply goes from one Actor to another, these Actors are placed in the PatrolPoints array.<br>The code below is how Patrol is.
         </p>
-        <img src="">
+        <code class="language-cpp">
+void AMyPatrollingAI::Patrol() 
+{
+  SetWalkSpeed(PatrolSpeed);
+
+  FollowResult = Controller-&#62;MoveToLocation(PatrolPoints[PatrolNum]-&#62;GetActorLocation(), InvestigationTolerance, false); //Move AI
+
+  switch (FollowResult) //Do things based on what the Abstracted function returns
+  {
+  case EPathFollowingRequestResult::Failed:
+    UE_LOG(LogTemp, Display, TEXT("Failed to move to location %s, fix please"), *GetActorLocation().ToString());
+    break;
+  case EPathFollowingRequestResult::RequestSuccessful:
+    //Moving towards goal
+    break;
+  case EPathFollowingRequestResult::AlreadyAtGoal:
+    NextPatrolLocation();
+  default:
+    break;
+  }
+}
+        </code>
       </div>
       
       <div class="sidebysideElement">
         <h3>Investigate</h3>
         <p>
-          Investigate is the state in which the AI will go towards where the player/noise was. If the player has been seen for longer than the TimeToSeePlayer set by the Developers, it will go to Chase. If the player hasn't been seen for long enough and the AI reaches the location, it will search for a time set by Developers and then return to Patrol.
+          Investigate is the state that is activated when searching a location, whether it be the Player’s location because the AI sees them or a Distraction. The FinishInvestigation function sets the state to Patrol to get the AI back in it’s default state.<br>The code below shows the implementation taken.
         </p>
-        <img src="">
+        <code class="language-cpp">
+void AMyPatrollingAI::Investigate() 
+{
+	if (CanSeePlayer()) //If the player can be seen
+	{
+		UE_LOG(LogTemp, Display, TEXT("Investigating Player Location"));
+		PlacePlayerLocation(Player-&#62;GetActorLocation());
+		InvestigateLocation(GetLatestPlayerLocation());
+
+		if (ChasePlayer()) //If the Player has been seen for more than a set time
+		{
+			SetState(AIState::STATE_Chase);
+		}
+		SetWalkSpeed(InvestigateSpeed);
+	}
+
+	FollowResult = Controller-&#62;MoveToLocation(InvestigationLocation, InvestigationTolerance, false); //MoveAI
+
+	switch (FollowResult) //Result of Moving the AI
+	{
+	case EPathFollowingRequestResult::Failed:
+
+		if (InvestigationLocation == GetLatestPlayerLocation()) //Making sure that the AI can't get stuck just searching for the player's same location, essentially blocking them
+		{
+			if (GetNextPlayerLocation(InvestigationLocation) == FVector::ZeroVector) //If no more of the Player's locations are searchable
+			{
+				InvestigateLocation(GetActorLocation()); //Search Self
+			}
+			else
+			{
+				InvestigateLocation(GetNextPlayerLocation(InvestigationLocation)); //Search Next Location
+			}
+		}
+		break;
+	case EPathFollowingRequestResult::RequestSuccessful:
+		//Moving towards goal
+		break;
+	case EPathFollowingRequestResult::AlreadyAtGoal:
+
+		if (!InvestigateTimer.IsValid()) //Make sure the Timer is invalid before doing this otherwise will call infinitely
+		{
+			GetWorld()-&#62;GetTimerManager().SetTimer(InvestigateTimer, this, &AMyPatrollingAI::FinishInvestigation, InvestigationTime); //Start Timer for searching the location, call FinishInvestigation once timer finishes
+		}
+	default:
+		break;
+	}
+}
+
+void AMyPatrollingAI::FinishInvestigation()
+{
+	InvestigateTimer.Invalidate(); //Invalidate timer to allow for it to be used again
+	SetState(STATE_Patrol);
+}
+        </code>
       </div>
     </div>
 
@@ -263,17 +655,39 @@ time += FVector::Dist(initialLocation, newLocation);
       <div class="sidebysideElement">
         <h3>Chase</h3>
         <p>
-          Chase is a simple state where the AI will attempt to go to the player's position. If the AI touches the player, an event is called and kills the player. If the AI loses sight of the player, it will go and investigate the last location the AI saw the player.
+          Chase is a simple state that simply runs after the player until they cannot be seen anymore. The code below shows the implementation taken.
         </p>
-        <img src="">
+        <code class="language-cpp">
+void AMyPatrollingAI::Chase() 
+{
+	SetWalkSpeed(ChaseSpeed);
+	PlacePlayerLocation(Player-&#62;GetActorLocation());
+	FollowResult = Controller-&#62;MoveToLocation(GetLatestPlayerLocation(), ChaseTolerance);
+}
+        </code>
       </div>
       
       <div class="sidebysideElement">
         <h3>Stun</h3>
         <p>
-          Stun is a state where the player hits them with a knife, this state stops the AI from doing anything for StunnedTime seconds and investigates where it is.
+          Stun is a simple state that stops the AI’s movement and starts a timer for not moving for a set amount of time.<br>The StunFinished function Investigates the AI’s current location and follows that track.<br>The code below shows this implementation
         </p>
-        <img src="">
+        <code class="language-cpp">
+void AMyPatrollingAI::Stun() 
+{
+	GetCharacterMovement()-&#62;StopMovementImmediately();
+	if (!StunTimer.IsValid())
+	{
+		GetWorld()-&#62;GetTimerManager().SetTimer(StunTimer, this, &AMyPatrollingAI::StunFinished, StunnedTime);
+	}
+}
+
+void AMyPatrollingAI::StunFinished()
+{
+	StunTimer.Invalidate();
+	InvestigateLocation(GetActorLocation());
+}
+        </code>
       </div>
     </div>
 
@@ -281,71 +695,607 @@ time += FVector::Dist(initialLocation, newLocation);
   </div>
 
   <div id="uiManager" class="projectDiv">
-    <h2>UI Manager</h2>
+    <h2>UI</h2>
 
     <div class="sidebyside">
       
       <div class="sidebysideElement">
-        <h3>Spawning Widgets</h3>
+        <h3>UI Manager</h3>
         <p>
-          When the component is placed on an actor, there is the ability to add to a <a href="#">TArray</a> of <a href="#">TSubclassOf</a> UUIBaseWidget, this is a class created which holds some extra data used in handling pausing the game. With this array populated, when the game starts, the Widgets are instanciated using <a href="#">CreateWidget</a> and are stored in the UIInstances TArray, alongside giving them a pointer to the UIManager.
+          The UIManager has the job of managing the UI and switching the UI based on the given input. This Component inherits from the <a href=”https://docs.unrealengine.com/5.1/en-US/API/Runtime/Engine/Components/UActorComponent/”>UActorComponent</a> to allow it to be placed on an Actor.
         </p>
-        <code class="language-cpp">
-
-
-        </code>
-
       </div>
 
       <div class="sidebysideElement">
-        <h3>Displaying Widgets</h3>
+        <h3>UI Base Widget</h3>
         <p>
-          Changing Widgets is as simple as calling the SetForegroundWidget function and inputting the instanciated UI element you want to change to. There is an override called GetForegroundWidgetClass which takes in a <a href="#">TSubclassOf</a> UUIBaseWidget and saves a blueprint icon. When changing Widgets, we iterate through the UIInstances array and remove any active Widgets and display the new Widget.
+          The UIBaseWidget inherits from <a href="https://docs.unrealengine.com/4.27/en-US/API/Runtime/UMG/Blueprint/UUserWidget/">UUserWidget</a> and has a bool for if the widget pauses the world, and a reference to the UIManager. The code below is the UUIBaseWidget
         </p>
         <code class="language-cpp">
+UCLASS()
+class CODENAME_PORCUPINE_API UUIBaseWidget : public UUserWidget
+{
+  GENERATED_BODY()
+  
+public:
+  
+  UPROPERTY(EditAnywhere, BlueprintReadOnly)
+    bool pauseWorld = false;
+  UPROPERTY(EditAnywhere, BlueprintReadWrite)
+    class UUIManagerComponent* UI_Manager = nullptr;
+};
+        </code>
+      </div>
+    </div>
 
+    <div class="sidebyside">
+      <div class="sidebysideElement">
+        <h3>Creating Widget</h3>
+        <p>
+          The UIManager has an array for UIElements that is <a href="https://docs.unrealengine.com/4.27/en-US/API/Runtime/CoreUObject/Templates/TSubclassOf/">TSubclassOf<UUIBaseWidget></a>. Using this, we create the UI elements using <a href="https://docs.unrealengine.com/4.27/en-US/API/Runtime/UMG/Blueprint/CreateWidget/">CreateWidget</a> and setting the reference of UIManager to the current UIManager.<br>The code below shows this in action:
+        </p>
+        <code class="language-cpp">
+    void UUIManagerComponent::UISetup()
+    {
+      if (UIInstances.Num() &#62; 0) //Safety check to ensure that we're not wasting resources with creating the widgets again
+      {
+        return;
+      }
+      if (UIElements.Num() == 0)
+      {
+        UE_LOG(LogTemp, Warning, TEXT("UI Instances is Zero, are you sure you meant to do this?"));
+      }
 
+      for (size_t i = 0; i &#60; UIElements.Num(); i++)
+      {
+        if (UIElements[i])
+        {
+          UIInstances.Add(CreateWidget&#60;UUIBaseWidget&#62;(GetWorld(), UIElements[i], UIElements[i]-&#62;GetFName()));
+          UIInstances[i]-&#62;UI_Manager = this;
+        }
+      }
+
+      SetForegroundWidgetClass(StartWidget);
+    }
+        </code>
+      </div>
+      <div class="sidebysideElement">
+        <h3>Setting UI to Foreground</h3>
+        <p>
+          Setting the UI to the foreground is done in the SetForegroundWidget function. There are two versions created, SetForegroundWidget and SetForegroundWidgetClass (Unreal does not like Overriding, if it did they would have the same function name).<br>As the names suggest, one takes in a  UUIBaseWidget whilst the other takes in a TSubclassOf respectively.<br>The code below shows these functions in action.
+        </p>
+        <code class="language-cpp">
+    void UUIManagerComponent::SetForegroundWidget(UUIBaseWidget* NewWidget)
+    {
+      if (NewWidget == nullptr) //Make sure you can't crash the game
+      {
+        UE_LOG(LogTemp, Error, TEXT("NewWidget is NULL, ensure that it is assigned correctly!"));
+        return;
+      }
+
+      PrevWidget = CurWidget;
+
+      int floatOrder = 0; 
+      for (size_t i = 0; i &#60; UIInstances.Num(); i++)
+      {
+        if (NewWidget == UIInstances[i])//Enable this Widget
+        {
+          UIInstances[i]-&#62;AddToViewport(floatOrder);
+          floatOrder--;
+        }
+        else if (UIInstances[i]-&#62;IsInViewport())//If not wanted but in Viewport
+        {
+          UIInstances[i]-&#62;RemoveFromParent();
+        }
+
+      }
+      
+      APlayerController* player = UGameplayStatics::GetPlayerController(GetWorld(), 0);
+
+      UGameplayStatics::SetGamePaused(GetWorld(), NewWidget-&#62;pauseWorld);
+
+      if (NewWidget-&#62;pauseWorld)//Show mouse cursor and allow for mouse movement
+      {
+        player-&#62;SetInputMode(FInputModeGameAndUI());
+        player-&#62;bShowMouseCursor = true;
+      }
+      else //Game only movement
+      {
+        player-&#62;SetInputMode(FInputModeGameOnly());
+        player-&#62;bShowMouseCursor = false;
+      }
+
+      CurWidget = NewWidget;
+    }
+
+    void UUIManagerComponent::SetForegroundWidgetClass(TSubclassOf&#60;UUIBaseWidget&#62; ClassName)
+    {
+      SetForegroundWidget(GetUIInstanceFromClass(ClassName));
+    }
         </code>
       </div>
     </div>
   </div>
-  <div id="feedback"class="projectDiv">
-    <h2>Feedback Form</h2>
-    
+
+  <div id="flyingKnife" class="projectDiv">
+    <h3>Flying Knife Mechanic</h3>
+    <p>
+      The flying knife mechanic was originally created by the Freelance Programmer purely in Blueprints, however they did not have as much time to work on the project, so the slack was taken up and the Knife Blueprint was ported to C++ for optimisation and ease of refactoring reasons.<br>The Blueprint below shows the original Blueprint the Freelance Programmer created and the code below it is the ported code.<br>The Freelance Programmer was contacted regarding the porting of the code before it was started and they confirmed it was alright to go ahead.
+    </p>
+
+    <h3>Initial Aiming</h3>
+    <p>Blueprint</p>
+    <img src="images/MindSlayer/InitialAimingBlueprint.png">
+    <p>Code</p>
+    <code class="language-cpp">
+void AKnifePawn::StartAiming()
+{
+	CurrentMode = MODE_AIMING;
+}
+
+//Tick function for both Aiming and Flying
+void AKnifePawn::Tick(float DeltaTime)
+{
+	Super::Tick(DeltaTime);
+	switch (CurrentMode)
+	{
+	case MODE_AIMING:
+		break;
+	case MODE_FLYING:
+		AddMovementInput(GetActorForwardVector(), FlyingSpeed);
+		break;
+	default:
+		break;
+	}
+}
+    </code>
+
+    <h3>Flying</h3>
+    <p>Blueprint</p>
+    <img src="images/MindSlayer/FlyingBlueprint.png">
+    <p>Code</p>
+    <code class="language-cpp">
+void AKnifePawn::StartFlying()
+{
+  CurrentMode = MODE_FLYING;
+  FloatingPawnMovementComponent-&#62;MaxSpeed = FlyingSpeed;
+  GetWorld()-&#62;GetTimerManager().SetTimer(FlyingTimeHandle, this, &AKnifePawn::DestroyKnife, FlyingTime);
+}
+
+//Tick function for both Aiming and Flying
+void AKnifePawn::Tick(float DeltaTime)
+{
+  Super::Tick(DeltaTime);
+  switch (CurrentMode)
+  {
+  case MODE_AIMING:
+    break;
+  case MODE_FLYING:
+    AddMovementInput(GetActorForwardVector(), FlyingSpeed);
+    break;
+  default:
+    break;
+  }
+}
+    </code>
+
+    <h3>Mouse Movement</h3>
+    <p>Blueprint</p>
+    <img src="images/MindSlayer/MouseMovementBlueprint.png">
+    <p>Code</p>
+    <code class="language-cpp">
+void AKnifePawn::KnifeHorizontal(float Value)
+{
+	AddControllerYawInput(Value * YAxisSensitivity);
+}
+
+
+void AKnifePawn::KnifeVertical(float Value)
+{
+	AddControllerPitchInput(Value * ZAxisSensitivity);
+}
+    </code>
+
+    <h3>Object Hit</h3>
+    <p>Blueprint</p>
+    <img src="images/MindSlayer/KnifeHitBlueprint.png">
+    <img src="images/MindSlayer/KnifeHitBlueprintAgain.png">
+    <p>Code</p>
+    <code class="language-cpp">
+void AKnifePawn::HitObject(AActor* ActorHit)
+{
+	if (Cast&#60;ADistraction&#62;(ActorHit)) //Distraction
+	{
+		Cast&#60;ADistraction&#62;(ActorHit)-&#62;SendDistraction();
+		//TODO: Play sound and alert guard to position
+	}
+	else if (Cast&#60;AMyPatrollingAI&#62;(ActorHit)) //AI
+	{
+		Cast&#60;AMyPatrollingAI&#62;(ActorHit)-&#62;SetState(STATE_Stun);
+	}
+	
+	UE_LOG(LogTemp, Display, TEXT("ActorHit is: %s"), *AActor::GetDebugName(ActorHit));
+
+	DestroyKnife();
+}
+    </code>
+
+    <h3>Knife Destruction</h3>
+    <p>Blueprint</p>
+    <img src="images/MindSlayer/KnifeDestroy.png">
+    <p>Code</p>
+    <code class="language-cpp">
+void AKnifePawn::DestroyKnife()
+{
+	if (!Player)
+	{
+		UE_LOG(LogTemp, Display, TEXT("Player not available"));
+		return;
+	}
+	GetController&#60;APlayerController&#62;()-&#62;SetViewTargetWithBlend(Player);
+	GetController()-&#62;Possess(Player);
+
+	if (CurrentMode == MODE_FLYING)
+	{
+		Player-&#62;StartKnifeCooldown();
+	}
+
+	FlyingTimeHandle.Invalidate();
+	Destroy();
+}
+    </code>
+
+    <h3>Added Features</h3>
     <div class="sidebyside">
-      
       <div class="sidebysideElement">
-        <h3>Beginning the URL</h3>
+        <h3>Events</h3>
         <p>
-          With this implementation using Google Forms, a precreated URL is needed to get all the entry data and the actual URL it will all be sent, seperating the "&entry.xxxxxxx=" elements from the rest of the URL will give us the individual options to send, leaving the primary URL to be used for sending the information. This <a href="#">article</a> goes more in-depth on this entire procedure
+          Events were added to allow for Developer additions since the code has been ported, these include, OnAimStart; OnFlyingStart. These are BlueprintNativeEvents and are used purely for Blueprint additions
         </p>
-
-        <img src="">
       </div>
-
       <div class="sidebysideElement">
-        <h3>How Data Becomes URL Viable</h3>
+        <h3>Distractions</h3>
         <p>
-          The data which is sent has to be URL viable in order to not cause any issues, with this knowledge, a function was created which sifts through each set of data and changes every invalid char to a valid string and returns the now viable string. 
+          Distractions were required for the Player to progress through certain parts of the map. This was an addition done after the porting and uses a class called ADistraction.<br>ADistraction has a function called SendDistraction that sends out a SweepCast based on the CylinderWidth; CylinderHeight and Segments. The closest AI within this area will go and Investigate the Distraction.<br>The code below is the SendDistraction implementation.
         </p>
         <code class="language-cpp">
-
-
+void ADistraction::SendDistraction()
+{
+	FVector SweepLength = (GetActorForwardVector().GetSafeNormal() * 2.f);
+	FCollisionShape CapsuleShape = FCollisionShape::MakeCapsule(CylinderWidth, CylinderHeight / 2); //Make Cylinder/Capsule
+	
+	if (GetWorld()-&#62;SweepMultiByChannel(SweepHit, GetActorLocation(), GetActorLocation() + SweepLength, FQuat::Identity, ECollisionChannel::ECC_Pawn, CapsuleShape, QueryParams)) //MultiSweep, just because it can hit the floors
+	{
+		for (size_t Hit = 0; Hit &#60; SweepHit.Num(); Hit++)
+		{
+			if (AMyPatrollingAI* closestAI = Cast&#60;AMyPatrollingAI&#62;(SweepHit[Hit].GetActor())) //Closest AI
+			{
+				closestAI-&#62;Distract(GetActorLocation()); //Distract said closest one
+			}
+		}
+	}
+}
         </code>
       </div>
+    </div>
+  </div>
 
+  <div id="feedback" class="projectDiv">
+    <h3>Feedback Form</h3>
+    <p>
+      The Feedback System was created for in-game feedback without having to go externally to Google Forms. This system uses the URL submission that Google Forms can use and exploits that to send form submissions to a certain Form. The <a href="https://theconfuzedsourcecode.wordpress.com/2019/11/11/you-may-restfully-submit-to-your-google-forms/">guide here</a> shows how to get the full URL for this method of submission.
+    </p>
+
+    <h3>Setting up URL</h3>
+    <p>
+      Setting up the URL has been simplified to allow for the end user to simply put the entire URL and the class will do the rest.<br>The code below shows how the AutoSetupURLComponents has been implemented.
+    </p>
+    <code class="language-cpp">
+void UFeedbackFormWidget::AutoSetupURLComponents(FString FullURL)
+{
+  FString URLHeader;
+  TArray&#60;FString&#62; EntryIDs;
+
+  int URLorEntryIDs = 0; //0 for URL, 1 for EntryIDs
+  bool EntryIDContent = false;
+  FString EntryID;
+  for (size_t StringChar = 0; StringChar &#60; FullURL.Len(); StringChar++)
+  {
+    switch (URLorEntryIDs)
+    {
+    case 0:
+      URLHeader.AppendChar(FullURL[StringChar]);
+      if (URLHeader.Contains("pp_url")) //The end of the URL
+      {
+        URLorEntryIDs++;
+      }
+      break;
+    case 1:
+      if (!EntryIDContent)
+      {
+        EntryID.AppendChar(FullURL[StringChar]);
+        if (EntryID.Contains("=")) //At the end of the current EntryID
+        {
+          if (!EntryIDs.Contains(EntryID))
+          {
+            EntryIDs.Add(EntryID);
+          }
+          EntryID.Empty();
+          EntryIDContent = true;
+        }
+      }
+      else
+      {
+        if (FullURL[StringChar] == '&') //New Entry ID has just shown itself
+        {
+          EntryID.AppendChar(FullURL[StringChar]);
+          EntryIDContent = false;
+        }
+      }
+    default:
+      break;
+    }
+  }
+  URL = ChangeURLEnding(URLHeader);
+  URLEntryElements = EntryIDs;
+}
+
+FString UFeedbackFormWidget::ChangeURLEnding(FString OldURL)
+{
+  FString SubmitURL;
+  for (size_t Char = 0; Char &#60; OldURL.Len(); Char++)
+  {
+    if (OldURL[Char] == 'v' && OldURL[Char + 1] == 'i' && OldURL[Char + 2] == 'e' && OldURL[Char + 3] == 'w' && OldURL[Char + 4] == 'f' && OldURL[Char + 5] == 'o' && OldURL[Char + 6] == 'r' && OldURL[Char + 7] == 'm') //if the current Char leads to make 'viewform'
+    {
+      SubmitURL.Append("formResponse?&submit=Submit?usp=pp_url");
+      break;
+    }
+    else
+    {
+      SubmitURL.AppendChar(OldURL[Char]);
+    }
+  }
+  return SubmitURL;
+}
+    </code> 
+
+    <h3>UI Widget Setup</h3>
+    <p>
+      When it comes to setting up the UI Widgets for this implementation, you want all the elements to follow the particular classes created and fill them out where needed, these classes are:
+    </p>
+    <table>
+        <tr>
+          <th>Short; Long; Time; Date</th>
+          <th>Radio; Linear</th>
+          <th>Check</th>
+          <th>Drop</th>
+        </tr>
+        <tr>
+          <td>EditableText</td>
+          <td>RadioCheckBox</td>
+          <td>FeedbackCheckBox</td>
+          <td>ComboBox(String)</td>
+        </tr>
+        <tr>
+          <td>MultiLineEditableText</td>
+        </tr>
+        <tr>
+          <td>MultiLineEditableTextBox</td>
+        </tr>
+    </table>
+    
+    <p>
+      The Blueprint below shows an example of how to set up the arrays for the setup.
+    </p>
+    <img src="">
+    <p>
+      The code for this implementation is a lot of checks, all of them split up can be seen below
+    </p>
+
+    <div class="sidebyside">
       <div class="sidebysideElement">
-        <h3>Sending Data</h3>
-        <p>
-          With the newly acquired strings, the URL is constructed correctly and is then sent using the <a href="#">FHttpModule</a> class found within Unreal. Once successful, it calls an event which can then be used in Blueprints for what happens after
-        </p>
-
+        <h3>Short; Long; Date; Time</h3>
         <code class="language-cpp">
-
-
+case Short: /*Short is changed to Long/Date/Time*/ //Editable Text / Editable Text (Multi-Line)
+if (!Cast&#60;UEditableText&#62;(QuestionElements[0]) && !Cast&#60;UMultiLineEditableText&#62;(QuestionElements[0]) && !Cast&#60;UMultiLineEditableTextBox&#62;(QuestionElements[0]))
+{
+  UE_LOG(LogTemp, Error, TEXT("Question %d is not an EditableText or MultiLineEditableTextBox, this is not allowed, please ensure it is one of these"), QuestionNum + 1);
+}
+if (QuestionElements.Num() &#62; 1)
+{
+  UE_LOG(LogTemp, Warning, TEXT("Only the first element in question %d will be accepted, all other elements will be ignored!"), QuestionNum + 1);
+}
+break;
         </code>
       </div>
-      
+      <div class="sidebysideElement">
+        <h3>Check</h3>
+        <code class="language-cpp">
+case Check: //Regular CheckBox
+for (size_t QuestionElement = 0; QuestionElement &#60; QuestionElements.Num(); QuestionElement++)
+{
+  if (!Cast&#60;UFeedbackCheckBox&#62;(QuestionElements[QuestionElement]))
+  {
+    UE_LOG(LogTemp, Error, TEXT("Question %d Element %d is not a FeedbackCheckBox, please make sure that this Question Element is a FeedbackCheckBox"), QuestionNum, QuestionElement);
+  }
+}
+break;
+        </code>
+      </div>
+    </div>
+
+    <div class="sidebyside">
+      <div class="sidebysideElement">
+        <h3>Radio; Linear</h3>
+        <code class="language-cpp">
+case Radio: /*Radio is changed to Linear*/ //If radio (Can only select one) RadioCheckBox
+for (size_t QuestionElement = 0; QuestionElement &#60; QuestionElements.Num(); QuestionElement++)
+{
+  if (Cast&#60;URadioCheckBox&#62;(QuestionElements[QuestionElement])) //Must be a URadioCheckBox to work
+  {
+    Cast&#60;URadioCheckBox&#62;(QuestionElements[QuestionElement])-&#62;OnRadioChanged.AddDynamic(this, &UFeedbackFormWidget::RadioSet); //Setup event which returns the item it is
+    RadioMap.Add(QuestionElements[QuestionElement], QuestionNum); //Add this to the Radio Map for easy access in RadioSet
+  }
+  else
+  {
+    UE_LOG(LogTemp, Error, TEXT("Question %d Element %d is not a RadioCheckBox, this is not allowed, please change Question Element %d to a RadioCheckBox"), QuestionNum + 1, QuestionElement, QuestionElement);
+    break; //Break outta loop since it doesn't actually work
+  }
+}
+break;
+        </code>
+      </div>
+      <div class="sidebysideElement">
+        <h3>Drop</h3>
+        <code class="language-cpp">
+case Drop: //ComboBox (String)
+if (QuestionElements.Num() &#62; 1)
+{
+  UE_LOG(LogTemp, Warning, TEXT("Only the first Element in Question %d will be accepted, all other Elements will be ignored!"), QuestionNum);
+}
+if (!Cast&#60;UComboBoxString&#62;(QuestionElements[0]))
+{
+  UE_LOG(LogTemp, Error, TEXT("Question %d is not a ComboBoxString, please ensure that this Element one of these"), QuestionNum);
+}
+break;
+        </code>
+      </div>
+    </div>
+
+    <div class="sidebyside">
+      <div class="sidebysideElement">
+        <h3>FeedbackCheckBox</h3>
+        <p>
+          FeedbackCheckBox inherits from <a href="#">CheckBox</a> and adds a FString for Text which is read when Sending the Form.
+        </p>
+      </div>
+      <div class="sidebysideElement">
+        <h3>RadioCheckBox</h3>
+        <p>
+          RadioCheckbox inherits from FeedbackCheckBox and adds a Delegate for a CheckBoxSingular and a function for this Delegate is added in the Radio; Linear code above.
+        </p>
+      </div>
+    </div>
+
+    <h3>Sending Form</h3>
+    <p>
+      Sending the form is a simple function call which iterates through each question element and generates the question based on the elements added.<br> The segmented code below shows the process of generating the full URL to send and sending it using the <a href="https://docs.unrealengine.com/4.26/en-US/API/Runtime/UMG/Components/UCheckBox/">FHTTPModule</a> class
+    </p>
+    <h3>Question Checking</h3>
+
+    <div class="sidebyside">
+      <div class="sidebysideElement">
+        <h3>Short; Long; Date; Time</h3>
+        <code class="language-cpp">
+case Short:
+//Only use the first Element
+if (Cast&#60;UEditableText&#62;(QuestionElements[0]))
+{
+  EntryElement.Append(URLEntryElements[QuestionNum] + URLViableString(Cast&#60;UEditableText&#62;(QuestionElements[0])-&#62;GetText().ToString()));
+}
+else if (Cast&#60;UMultiLineEditableText&#62;(QuestionElements[0]))
+{
+  EntryElement.Append(URLEntryElements[QuestionNum] + URLViableString(Cast&#60;UMultiLineEditableText&#62;(QuestionElements[0])-&#62;GetText().ToString()));
+}
+else
+{
+  EntryElement.Append(URLEntryElements[QuestionNum] + URLViableString(Cast&#60;UMultiLineEditableTextBox&#62;(QuestionElements[0])-&#62;GetText().ToString()));
+}
+break;
+        </code>
+      </div>
+      <div class="sidebysideElement">
+        <h3>Check</h3>
+        <code class="language-cpp">
+case Check:
+TArray&#60;UFeedbackCheckBox*&#62; CheckedElements = CheckGet(QuestionElements);for (size_t Element = 0; Element &#60; CheckedElements.Num(); Element++)
+{
+  EntryElement.Append(URLEntryElements[QuestionNum] + URLViableString(CheckedElements[Element]-&#62;Text));
+}
+break;
+        </code>
+      </div>
+    </div>
+
+    <div class="sidebyside">
+      <div class="sidebysideElement">
+        <h3>Radio; Linear</h3>
+        <code class="language-cpp">
+case Radio:
+TArray&#60; URadioCheckBox*&#62;  CheckedElement = RadioGet(QuestionElements);
+for (size_t Element = 0; Element &#60;  CheckedElement.Num(); Element++)
+{
+  EntryElement.Append(URLEntryElements[QuestionNum] + URLViableString(CheckedElement[Element]-&#62; Text));
+}
+break;
+        </code>
+      </div>
+      <div class="sidebysideElement">
+        <h3>Drop</h3>
+        <code class="language-cpp">
+case Drop:
+if (Cast&#60; UComboBoxString&#62; (QuestionElements[0]))
+{
+  UComboBoxString* Element = Cast&#60; UComboBoxString&#62; (QuestionElements[0]);
+  EntryElement.Append(URLEntryElements[QuestionNum] + URLViableString(Element-&#62; GetSelectedOption()));
+}
+break;
+        </code>
+      </div>
+    </div>
+
+    <h3>Sending URL</h3>
+    <code class="language-cpp">
+//Finished all the questions
+Http = &FHttpModule::Get();
+auto Request = Http-&#62; CreateRequest();
+
+Request-&#62; SetURL(URL + EntryElement);
+Request-&#62; SetVerb("GET");
+
+Request-&#62; OnProcessRequestComplete().BindUObject(this, &UFeedbackFormWidget::OnRequestRecieved);
+
+Request-&#62; ProcessRequest();
+    </code>
+    <p>
+      There are some extra functions used such as RadioGet and CheckGet, these return an array of elements that are ticked.<br>Their code implementations are below.
+    </p>
+
+    <div class="sidebyside">
+      <div class="sidebysideElement">
+        <h3>CheckGet</h3>
+        <code class="language-cpp">
+TArray&#60; UFeedbackCheckBox*&#62;  UFeedbackFormWidget::CheckGet(TArray&#60; UObject*&#62;  QuestionElements)
+{
+  TArray&#60; UFeedbackCheckBox*&#62;  ReturnArray = TArray&#60; UFeedbackCheckBox*&#62; ();
+
+  for (size_t QuestionEle = 0; QuestionEle &#60;  QuestionElements.Num(); QuestionEle++)
+  {
+    if (Cast&#60; UFeedbackCheckBox&#62; (QuestionElements[QuestionEle])-&#62; IsChecked())
+    {
+      ReturnArray.Add(Cast&#60; UFeedbackCheckBox&#62; (QuestionElements[QuestionEle]));
+    }
+  }
+  return ReturnArray;
+}
+        </code>
+      </div>      
+      <div class="sidebysideElement">
+        <h3>RadioGet</h3>
+        <code class="language-cpp">
+TArray&#60; URadioCheckBox*&#62;  UFeedbackFormWidget::RadioGet(TArray&#60; UObject*&#62;  QuestionElements)
+{
+  TArray&#60; UFeedbackCheckBox*&#62;  NeedCast = CheckGet(QuestionElements);
+  TArray&#60; URadioCheckBox*&#62;  ReturnArray = TArray&#60; URadioCheckBox*&#62; ();
+  for (size_t QuestionEle = 0; QuestionEle &#60;  NeedCast.Num(); QuestionEle++)
+  {
+    ReturnArray.Add(Cast&#60; URadioCheckBox&#62; (NeedCast[QuestionEle]));
+  }
+  return ReturnArray;
+}
+        </code>
+      </div>
+    </div>
     </div>
   </div>
   
