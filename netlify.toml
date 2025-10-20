@@ -1,5 +1,0 @@
-[[redirects]]
-  from = "/"
-  to = "https://watchamacall-portfolio.super.site"
-  status = 302
-  force = true
