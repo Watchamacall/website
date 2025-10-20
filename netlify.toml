@@ -1,11 +1,5 @@
 [[redirects]]
   from = "/"
-  to = "https://your-super-site.super.site"
+  to = "https://watchamacall-portfolio.super.site"
   status = 302
   force = true
-
-# Example: /about stays on Netlify
-[[redirects]]
-  from = "/about"
-  to = "/about.html"
-  status = 200
